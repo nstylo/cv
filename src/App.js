@@ -17,6 +17,13 @@ const CVbody = styled.div`
   width: 210mm;
   color: #4d4d4d;
   font-size: 10px;
+  background-color: white;
+  overflow: hidden;
+
+  @media screen {
+    margin: 20px 0;
+    box-shadow: 0px 0px 8px 6px #333;
+  }
 `;
 
 const Header = styled.div`
@@ -139,8 +146,8 @@ const Me = styled.div`
   background: url(${me}) no-repeat;
   background-size: cover;
   border-radius: 50%;
-  width: 36mm;
-  height: 36mm;
+  width: 34mm;
+  height: 34mm;
   background-position: 0mm -2mm;
 `;
 
@@ -264,6 +271,12 @@ const Section = ({ header, children, ...props }) => {
 };
 
 const GlobalStyle = createGlobalStyle`
+  @media screen {
+    html {
+      background-color: #444;
+    }
+  }
+
   a {
     color: #21a021;
   }
@@ -277,7 +290,7 @@ function CV() {
         <Header>Niklas Stylianou</Header>
         <Container>
           <Sidebar>
-            <SidebarSection>
+            <SidebarSection style={{ margin: "32px 0 36px 0" }}>
               <Center>
                 <Me />
               </Center>
