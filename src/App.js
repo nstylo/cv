@@ -64,7 +64,7 @@ const SidebarHeader = styled.div`
 `;
 
 const SidebarSection = styled.div`
-  margin: 12px 0;
+  margin: 20px 0;
 `;
 
 const Content = styled.main`
@@ -100,7 +100,11 @@ const SectionItemWrapper = styled.div`
 `;
 
 const SectionItemLeft = styled.div`
+  box-sizing: border-box;
+  padding-right: 4mm;
+  white-space: wrap;
   min-width: 40mm;
+  width: 40mm;
 `;
 
 const SectionItemRight = styled.div``;
@@ -124,10 +128,11 @@ const Company = styled.p`
 
 const Place = styled.p`
   font-weight: 300;
-  color: #bbb;
+  color: #aaa;
   margin: 0;
   font-family: "Roboto";
   font-size: 8px;
+  margin-top: 2px;
 `;
 
 const Me = styled.div`
@@ -173,6 +178,79 @@ const Skill = styled.div`
   white-space: nowrap;
 `;
 
+const Bubble = styled.div`
+  display: block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-left: 3px;
+  background-color: ${(props) => (props.active === true ? "#21a021" : "#ccc")};
+`;
+
+const LanguageWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  font: "Roboto Condensed";
+  padding: 4px 0;
+`;
+
+const Language = ({ text, level = 0 }) => {
+  let level_text;
+  switch (level) {
+    case 1:
+      level_text = "basic";
+      break;
+    case 2:
+      level_text = "keine ahnung";
+      break;
+    case 3:
+      level_text = "fluent";
+      break;
+    case 4:
+      level_text = "native";
+      break;
+    default:
+      level_text = "keine ahnung";
+  }
+
+  return (
+    <LanguageWrapper>
+      <div
+        style={{
+          paddingLeft: 24,
+          fontFamily: "Roboto Condensed",
+          fontSize: 11,
+          fontWeight: 600,
+        }}
+      >
+        {text}
+        <span
+          style={{
+            paddingLeft: 4,
+            fontFamily: "Roboto Condensed",
+            fontSize: 8,
+            fontWeight: 500,
+            color: "#999",
+          }}
+        >
+          ({level_text})
+        </span>
+      </div>
+      <div
+        style={{ display: "flex", flexDirection: "row", alignItems: "center" }}
+      >
+        {Array(4)
+          .fill()
+          .map((_, i) => (
+            <Bubble active={i + 1 <= level} />
+          ))}
+      </div>
+    </LanguageWrapper>
+  );
+};
+
 const Section = ({ header, children, ...props }) => {
   return (
     <div>
@@ -187,7 +265,7 @@ const Section = ({ header, children, ...props }) => {
 
 const GlobalStyle = createGlobalStyle`
   a {
-    color: green;
+    color: #21a021;
   }
 `;
 
@@ -282,6 +360,13 @@ function CV() {
             </SidebarSection>
             <SidebarSection>
               <SidebarHeader>Languages</SidebarHeader>
+              {[
+                { text: "German", level: 4 },
+                { text: "English", level: 3 },
+                { text: "Dutch", level: 1 },
+              ].map((lang) => (
+                <Language text={lang.text} level={lang.level} />
+              ))}
             </SidebarSection>
             <SidebarSection>
               <SidebarHeader>Skillset</SidebarHeader>
@@ -317,7 +402,36 @@ function CV() {
             </SidebarSection>
           </Sidebar>
           <Content>
-            <Section header="Education"></Section>
+            <Section header="Education">
+              <SectionItem
+                company="Technische Universiteit Eindhoven, NL"
+                place="2017-2021"
+                position="Bachelor of Science"
+              >
+                Computer Science & Engineering
+              </SectionItem>
+              <SectionItem
+                company="RWTH Aachen, DE"
+                place="2015-2017"
+                position="Bachelor of Science"
+              >
+                Civil Engineering (discontinued)
+              </SectionItem>
+              <SectionItem
+                company="English Teaching College Wellington, NZ"
+                place="2014-2015"
+                position="CAE C1"
+              >
+                English
+              </SectionItem>
+              <SectionItem
+                company="Freiherr-vom-Stein Gymnasium"
+                place="2006-2014"
+                position="Abitur"
+              >
+                A Level
+              </SectionItem>
+            </Section>
             <Section header="Professional Experience">
               <SectionItem
                 company="Code Yellow B.V."
