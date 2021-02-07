@@ -69,7 +69,7 @@ const SidebarSection = styled.div`
 
 const Content = styled.main`
   width: 100%;
-  padding: 10px 16px;
+  padding: 10px 54px 10px 22px;
 `;
 
 const SectionHeader = styled.div`
