@@ -512,7 +512,7 @@ function CV() {
                 position="Student Assistant"
               >
                 Student assistant for the courses Java Programming, Discrete
-                Structures, Data Structures, Human Technology Interaction \&
+                Structures, Data Structures, Human Technology Interaction &
                 Webtech, Logic & Set Theory. Grade assignments, answer questions
                 and provide feedback to students.
               </SectionItem>
