@@ -112,6 +112,7 @@ const SectionItemLeft = styled.div`
   white-space: wrap;
   min-width: 40mm;
   width: 40mm;
+  line-height: 1.4;
 `;
 
 const SectionItemRight = styled.div``;
@@ -151,11 +152,15 @@ const Me = styled.div`
   background-position: 0mm -2mm;
 `;
 
-const SectionItem = ({ company, place, position, children, ...props }) => {
+const SectionItem = ({ entity, place, position, children, href, ...props }) => {
   return (
     <SectionItemWrapper>
       <SectionItemLeft>
-        <Company>{company}</Company>
+        <Company>
+          <A href={href} target="blank_" color="#4d4d4d">
+            {entity}
+          </A>
+        </Company>
         <Place>{place}</Place>
       </SectionItemLeft>
       <SectionItemRight>
@@ -201,6 +206,22 @@ const LanguageWrapper = styled.div`
   width: 100%;
   font: "Roboto Condensed";
   padding: 4px 0;
+`;
+
+const A = styled.a`
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  color: ${(props) => props.color};
+  -webkit-transition: border 500ms ease;
+  -moz-transition: border 500ms ease;
+  -ms-transition: border 500ms ease;
+  -o-transition: border 500ms ease;
+  transition: border 500ms ease;
+
+  &:hover {
+    text-decoration: none;
+    border-bottom: 1px solid ${(props) => props.color}dd;
+  }
 `;
 
 const Language = ({ text, level = 0 }) => {
@@ -304,9 +325,14 @@ function CV() {
               <br />
               <div style={{ lineHeight: 2 }}>
                 <div>
-                  <a href="tel:+31682220490" target="_blank" rel="noreferrer">
+                  <A
+                    color="#21a021"
+                    href="tel:+31682220490"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     +31 6 82220490
-                  </a>
+                  </A>
                   <img
                     src={tel}
                     alt="phone number"
@@ -314,13 +340,14 @@ function CV() {
                   />
                 </div>
                 <div>
-                  <a
+                  <A
+                    color="#21a021"
                     href="mailto:niklas@stylianou.info"
                     target="_blank"
                     rel="noreferrer"
                   >
                     niklas@stylianou.info
-                  </a>
+                  </A>
                   <img
                     src={email}
                     alt="email"
@@ -328,13 +355,14 @@ function CV() {
                   />
                 </div>
                 <div>
-                  <a
+                  <A
+                    color="#21a021"
                     href="https://github.com/nstylo"
                     target="_blank"
                     rel="noreferrer"
                   >
                     nstylo
-                  </a>
+                  </A>
                   <img
                     src={github}
                     alt="github"
@@ -342,13 +370,14 @@ function CV() {
                   />
                 </div>
                 <div>
-                  <a
+                  <A
+                    color="#21a021"
                     href="https://linkedin.com/in/niklas-stylianou"
                     target="_blank"
                     rel="noreferrer"
                   >
                     niklas-stylianou
-                  </a>
+                  </A>
                   <img
                     src={linkedin}
                     alt="linkedin"
@@ -356,13 +385,14 @@ function CV() {
                   />
                 </div>
                 <div>
-                  <a
+                  <A
+                    color="#21a021"
                     href="https://homerow.dev"
                     target="_blank"
                     rel="noreferrer"
                   >
                     homerow.dev
-                  </a>
+                  </A>
                   <img
                     src={home}
                     alt="homepage"
@@ -417,39 +447,44 @@ function CV() {
           <Content>
             <Section header="Education">
               <SectionItem
-                company="Eindhoven University of Technology, NL"
+                entity="Eindhoven University of Technology, NL"
                 place="2017-2021"
                 position="Bachelor of Science"
+                href="https://www.tue.nl/en/"
               >
                 Computer Science & Engineering
               </SectionItem>
               <SectionItem
-                company="RWTH Aachen, DE"
+                entity="RWTH Aachen, DE"
                 place="2015-2017"
                 position="Bachelor of Science"
+                href="https://www.rwth-aachen.de/go/id/a/?lidx=1"
               >
                 Civil Engineering (discontinued)
               </SectionItem>
               <SectionItem
-                company="English Teaching College Wellington, NZ"
+                entity="English Teaching College Wellington, NZ"
                 place="2014-2015"
                 position="CAE C1"
+                href="https://www.etc.ac.nz/"
               >
                 English
               </SectionItem>
               <SectionItem
-                company="Freiherr-vom-Stein Gymnasium, DE"
+                entity="Freiherr-vom-Stein Gymnasium, DE"
                 place="2006-2014"
                 position="Abitur"
+                href="http://www.stein.kleve.de/"
               >
                 A Level
               </SectionItem>
             </Section>
             <Section header="Professional Experience">
               <SectionItem
-                company="Code Yellow B.V."
+                entity="Code Yellow B.V."
                 place="Eindhoven, NL"
                 position="Fullstack Software Engineer"
+                href="https://www.codeyellow.nl/"
               >
                 Developing bespoke business software using ReactJS with MobX,
                 Django and PostgreSQL. Application maintenance and support.
@@ -461,44 +496,49 @@ function CV() {
                 software solutions.
               </SectionItem>
               <SectionItem
-                company="A Place For Now"
+                entity="A Place For Now"
                 place="Eindhoven, NL"
                 position="Lead Frontend Developer & Development Operations"
+                href="https://github.com/nstylo/aplacefornow.nl"
               >
                 Implementing a modern web application frontend using ReactJS and
                 MaterialUI within a small team. Responsible for CI/CD on Google
                 Cloud using Docker and Git for version control.
               </SectionItem>
               <SectionItem
-                company="Hable Accessibility"
+                entity="Hable Accessibility"
                 place="Eindhoven, NL"
                 position="Software Engineer"
+                href="https://www.iamhable.com/"
               >
                 Writing a parser in Python which transpiles a custom language
                 into C++ source code.
               </SectionItem>
               <SectionItem
-                company="Code Product Solutions B.V."
+                entity="Code Product Solutions B.V."
                 place="Eindhoven, NL"
                 position="Frontend Developer"
+                href="https://www.code-ps.com/office/id11603/eindhoven/"
               >
                 Implementing a modern business application frontend with ReactJS
                 which consumes REST API. Workflow via GitLab CI. Testing with
                 Jest.
               </SectionItem>
               <SectionItem
-                company="INNSIDE Aachen"
+                entity="INNSIDE Aachen"
                 place="Aachen, DE"
                 position="Commis de Rang & Barkeeper"
+                href="https://www.melia.com/en/hotels/germany/aachen/innside-aachen/index.htm"
               >
                 Serving and building relationships with customers by catering to
                 their individual needs. Preparing refined alcoholic beverages
                 and coffee.
               </SectionItem>
               <SectionItem
-                company="The Thorndon Hotel Wellington"
+                entity="The Thorndon Hotel Wellington"
                 place="Wellington, NZ"
                 position="Commis de Rang"
+                href="https://www.rydges.com/accommodation/new-zealand/the-thorndon-hotel-wellington/"
               >
                 Serving and building relationships with customers by catering to
                 their individual needs. Working in a professional team focused
@@ -507,9 +547,10 @@ function CV() {
             </Section>
             <Section header="Internships & Non-Professional Experience">
               <SectionItem
-                company="Eindhoven University of Technology"
+                entity="Eindhoven University of Technology"
                 place="Eindhoven, NL"
                 position="Student Assistant"
+                href="https://www.tue.nl/en/"
               >
                 Student assistant for the courses Java Programming, Discrete
                 Structures, Data Structures, Human Technology Interaction &
@@ -517,16 +558,18 @@ function CV() {
                 and provide feedback to students.
               </SectionItem>
               <SectionItem
-                company="Nestlé Purina"
+                entity="Nestlé Purina"
                 place="Euskirchen, DE"
                 position="Intern Marketing & Sales"
+                href="https://www.purina.com/"
               >
                 Conducting social media analysis on competitors.
               </SectionItem>
               <SectionItem
-                company="Evonik Industries"
+                entity="Evonik Industries"
                 place="Krefeld, DE"
                 position="Intern IT Administration"
+                href="https://www.purina.com/"
               >
                 Troubleshooting soft- and hardware problems, assisting in
                 rolling out new hardware to internal personnel.
@@ -534,9 +577,10 @@ function CV() {
             </Section>
             <Section header="Licenses & Certifications">
               <SectionItem
-                company="Massey University"
+                entity="Massey University"
                 place="Wellingtion, NZ"
                 position="Cambridge English Level 2 Certificate"
+                href="https://www.massey.ac.nz/"
               >
                 Credential ID: 0047776898
               </SectionItem>
