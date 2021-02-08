@@ -417,7 +417,7 @@ function CV() {
           <Content>
             <Section header="Education">
               <SectionItem
-                company="Technische Universiteit Eindhoven, NL"
+                company="Eindhoven University of Technology, NL"
                 place="2017-2021"
                 position="Bachelor of Science"
               >
@@ -438,7 +438,7 @@ function CV() {
                 English
               </SectionItem>
               <SectionItem
-                company="Freiherr-vom-Stein Gymnasium"
+                company="Freiherr-vom-Stein Gymnasium, DE"
                 place="2006-2014"
                 position="Abitur"
               >
@@ -507,7 +507,7 @@ function CV() {
             </Section>
             <Section header="Internships & Non-Professional Experience">
               <SectionItem
-                company="TU Eindhoven"
+                company="Eindhoven University of Technology"
                 place="Eindhoven, NL"
                 position="Student Assistant"
               >
