@@ -8,9 +8,29 @@
       "type": "image/x-icon"
     },
     {
-      "src": "N.png",
+      "src": "N64.png",
+      "type": "image/png",
+      "sizes": "64x64"
+    },
+    {
+      "src": "N128.png",
+      "type": "image/png",
+      "sizes": "128x128"
+    },
+    {
+      "src": "N192.png",
       "type": "image/png",
       "sizes": "192x192"
+    },
+    {
+      "src": "N256.png",
+      "type": "image/png",
+      "sizes": "256x256"
+    },
+    {
+      "src": "N512.png",
+      "type": "image/png",
+      "sizes": "512x512"
     }
   ],
   "start_url": ".",
