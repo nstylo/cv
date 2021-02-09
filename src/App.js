@@ -230,12 +230,21 @@ const SkillInner = styled.div`
   pointer-events: none;
 `;
 
-const bordercolor = keyframes`
+const bordercolor_enabled = keyframes`
   from {
     border: 0.1pt solid #aaa;
   }
   to {
     border: 1.5px solid #21a021;
+  }
+`;
+
+const bordercolor_disabled = keyframes`
+  from {
+    border: 0.1pt solid #aaa;
+  }
+  to {
+    border: 1.5px solid #aaa;
   }
 `;
 
@@ -252,8 +261,11 @@ const SkillOuter = styled.div`
     border: 0.1pt solid transparent;
 
     &:before {
-      animation: ${bordercolor} 0.15s ease;
-      border: 1.5px solid #21a021;
+      animation: ${(props) =>
+          props.TooltipDisabled ? bordercolor_disabled : bordercolor_enabled}
+        0.15s ease;
+      border: 1.5px solid
+        ${(props) => (props.TooltipDisabled ? "#aaa" : "#21a021")};
     }
   }
 
@@ -298,6 +310,7 @@ const Skill = ({ wikiText, wikiDisabled, text, ...props }) => {
 
   return (
     <SkillOuter
+      TooltipDisabled={wikiDisabled}
       onMouseEnter={() => setIsShown(true)}
       onMouseLeave={() => setIsShown(false)}
     >
