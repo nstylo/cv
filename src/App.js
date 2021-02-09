@@ -1,11 +1,13 @@
-import React from "react";
-import styled, { createGlobalStyle } from "styled-components";
+import React, { useEffect, useState } from "react";
+import styled, { keyframes, createGlobalStyle } from "styled-components";
 import me from "./Me.jpeg";
 import home from "./home.png";
 import linkedin from "./linkedin.png";
 import tel from "./tel.png";
 import email from "./email.png";
 import github from "./github.png";
+import axios from "axios";
+import _ from "lodash";
 
 const CVouter = styled.div`
   display: flex;
@@ -22,7 +24,7 @@ const CVbody = styled.div`
 
   @media screen {
     margin: 20px 0;
-    box-shadow: 0px 0px 8px 6px #333;
+    box-shadow: 0px 0px 8px 6px rgba(0, 0, 0, 0.2);
   }
 `;
 
@@ -173,22 +175,142 @@ const SectionItem = ({ entity, place, position, children, href, ...props }) => {
 
 const Skillset = styled.div`
   display: flex;
+  position: relative;
   flex-direction: row;
   justify-content: flex-end;
   flex-wrap: wrap;
   padding-left: 5mm;
 `;
 
-const Skill = styled.div`
+const fadeIn = keyframes`
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+`;
+
+const fadeOut = keyframes`
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+`;
+
+const ToolTipHeader = styled.div`
+  font-size: 20px;
+  font-family: "Roboto Condensed";
+  font-weight: 600;
+  margin-bottom: 10px;
+`;
+
+const ToolTip = styled.div`
+  display: ${(props) => (props.isShown ? "block" : "none")};
+  text-align: left;
+  position: absolute;
+  font-size: 12px;
+  z-index: 10;
+  width: 400px;
+  min-height: 80px;
+  padding: 20px;
+  background: white;
+  box-shadow: 0 30px 90px -20px rgba(0, 0, 0, 0.3);
+  left: calc(100% + 10px);
+  animation: ${(props) => (props.isShown ? fadeIn : fadeOut)} 0.5s ease;
+`;
+
+const SkillInner = styled.div`
   font-weight: 300;
-  background-color: white;
-  border: 0.1pt solid #aaa;
-  border-radius: 5px;
   font-size: 10px;
   padding: 2px 6px;
-  margin: 0 4px 4px 0;
   white-space: nowrap;
+  pointer-events: none;
 `;
+
+const bordercolor = keyframes`
+  from {
+    border: 0.1pt solid #aaa;
+  }
+  to {
+    border: 1.5px solid #21a021;
+  }
+`;
+
+const SkillOuter = styled.div`
+  box-sizing: border-box;
+  background-color: white;
+  margin: 0 4px 4px 0;
+  border: 0.1pt solid #aaa;
+  border-radius: 5px;
+  position: relative;
+
+  &:hover {
+    cursor: help;
+    border: 0.1pt solid transparent;
+
+    &:before {
+      animation: ${bordercolor} 0.15s ease;
+      border: 1.5px solid #21a021;
+    }
+  }
+
+  &:before {
+    border-radius: 5px;
+    content: " ";
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 1.5px solid transparent;
+  }
+`;
+
+const Skill = ({ wikiText, wikiDisabled, text, ...props }) => {
+  const [tooltip, setTooltip] = useState("");
+  const [title, setTitle] = useState("");
+  const [isShown, setIsShown] = useState(false);
+
+  if (!wikiText) wikiText = text;
+
+  useEffect(() => {
+    const fetchApi = async () => {
+      const response = await axios.get(
+        `https://en.wikipedia.org/w/api.php?origin=*&format=json&formatversion=2&action=query&prop=extracts&exintro&exchars=200&exlimit=1&explaintext&redirects=1&titles=${encodeURIComponent(
+          wikiText
+        )}`
+      );
+
+      if (response.status === 200) {
+        setTooltip(response.data.query.pages[0].extract);
+        setTitle(response.data.query.pages[0].title);
+      } else {
+        // do something?
+      }
+    };
+
+    fetchApi();
+  }, [wikiText]);
+
+  return (
+    <SkillOuter
+      onMouseEnter={() => setIsShown(true)}
+      onMouseLeave={() => setIsShown(false)}
+    >
+      {wikiDisabled ? null : (
+        <ToolTip isShown={isShown}>
+          <ToolTipHeader>{title}</ToolTipHeader>
+          {tooltip}
+        </ToolTip>
+      )}
+      <SkillInner>{text}</SkillInner>
+    </SkillOuter>
+  );
+};
 
 const Bubble = styled.div`
   display: block;
@@ -415,31 +537,71 @@ function CV() {
               <SidebarHeader>Skillset</SidebarHeader>
               <Skillset>
                 {[
-                  "JavaScript",
-                  "ReactJS",
-                  "Linux",
-                  "Git",
-                  "Python",
-                  "PostgreSQL",
-                  "Django",
-                  "HTML5",
-                  "CSS",
-                  "Bash",
-                  "SQL",
-                  "Docker",
-                  "Java",
-                  "C",
-                  "C++14",
-                  "NodeJS",
-                  "Cypress.io",
-                  "GraphQL",
-                  "styled-components",
-                  "Material-UI",
-                  "GatsbyJS",
-                  "Google Cloud Platform",
-                  "Scrum",
+                  { text: "JavaScript", wikiText: "", wikiDisabled: false },
+                  { text: "ReactJS", wikiText: "", wikiDisabled: false },
+                  { text: "Linux", wikiText: "", wikiDisabled: false },
+                  { text: "Git", wikiText: "", wikiDisabled: false },
+                  {
+                    text: "Python",
+                    wikiText: "Python_(programming_language)",
+                    wikiDisabled: false,
+                  },
+                  { text: "PostgreSQL", wikiText: "", wikiDisabled: false },
+                  {
+                    text: "Django",
+                    wikiText: "Django_(web_framework)",
+                    wikiDisabled: false,
+                  },
+                  { text: "HTML5", wikiText: "", wikiDisabled: false },
+                  { text: "CSS", wikiText: "", wikiDisabled: false },
+                  {
+                    text: "Bash",
+                    wikiText: "Bash_(Unix_shell)",
+                    wikiDisabled: false,
+                  },
+                  { text: "SQL", wikiText: "", wikiDisabled: false },
+                  {
+                    text: "Docker",
+                    wikiText: "Docker_(software)",
+                    wikiDisabled: false,
+                  },
+                  {
+                    text: "Java",
+                    wikiText: "Java_(programming_language)",
+                    wikiDisabled: false,
+                  },
+                  {
+                    text: "C",
+                    wikiText: "C_(programming_language)",
+                    wikiDisabled: false,
+                  },
+                  { text: "C++14", wikiText: "C++", wikiDisabled: false },
+                  { text: "NodeJS", wikiText: "Node.js", wikiDisabled: false },
+                  { text: "GraphQL", wikiText: "", wikiDisabled: false },
+                  {
+                    text: "styled-components",
+                    wikiText: "",
+                    wikiDisabled: true,
+                  },
+                  { text: "Material-UI", wikiText: "", wikiDisabled: true },
+                  { text: "GatsbyJS", wikiText: "", wikiDisabled: true },
+                  {
+                    text: "Google Cloud Platform",
+                    wikiText: "",
+                    wikiDisabled: false,
+                  },
+                  {
+                    text: "Scrum",
+                    wikiText: "Scrum_(software_development)",
+                    wikiDisabled: false,
+                  },
                 ].map((item) => (
-                  <Skill>{item}</Skill>
+                  <Skill
+                    key={item.text}
+                    text={item.text}
+                    wikiText={item.wikiText}
+                    wikiDisabled={item.wikiDisabled}
+                  />
                 ))}
               </Skillset>
             </SidebarSection>
