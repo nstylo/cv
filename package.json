@@ -1,7 +1,7 @@
 {
-  "name": "two-way-cv",
+  "name": "cv",
   "version": "0.1.0",
-  "homepage": "https://nstylo.github.io/two-way-cv",
+  "homepage": "https://nstylo.github.io/cv",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
