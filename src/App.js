@@ -7,7 +7,6 @@ import tel from "./tel.png";
 import email from "./email.png";
 import github from "./github.png";
 import axios from "axios";
-import _ from "lodash";
 
 const CVouter = styled.div`
   display: flex;
@@ -18,9 +17,10 @@ const CVouter = styled.div`
 const CVbody = styled.div`
   width: 210mm;
   color: #4d4d4d;
-  font-size: 10px;
+  font-size: 11px;
   background-color: white;
   overflow: hidden;
+  padding-bottom: 28px;
 
   @media screen {
     margin: 20px 0;
@@ -60,6 +60,7 @@ const Sidebar = styled.aside`
   height: 100%;
   background-color: #f2f2f2;
   padding: 12px;
+  font-size: 12px;
   text-align: right;
   box-sizing: border-box;
 `;
@@ -68,7 +69,7 @@ const SidebarHeader = styled.div`
   color: #4d4d4d;
   font-family: "Roboto Condensed";
   font-weight: 600;
-  font-size: 14px;
+  font-size: 16px;
   margin-bottom: 8px;
 `;
 
@@ -78,14 +79,14 @@ const SidebarSection = styled.div`
 
 const Content = styled.main`
   width: 100%;
-  padding: 10px 54px 10px 22px;
+  padding: 10px 42px 10px 22px;
 `;
 
 const SectionHeader = styled.div`
   white-space: nowrap;
   font-family: "Roboto Condensed";
   font-weight: 500;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 600;
   color: #4d4d4d;
 `;
@@ -94,18 +95,18 @@ const HR = styled.div`
   flex-grow: 1;
   width: 100%;
   margin: 0px;
-  margin-left: 5px;
+  margin-left: 6px;
   margin-bottom: 6px;
   border: 0px;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1.5px solid #ccc;
 `;
 
 const SectionItemWrapper = styled.div`
   display: flex;
   flex-direction: row;
-  font-size: 10px;
+  font-size: 12px;
   color: #4d4d4d;
-  margin: 8px 0;
+  margin: 10px 0;
 `;
 
 const SectionItemLeft = styled.div`
@@ -122,12 +123,14 @@ const SectionItemRight = styled.div``;
 const SectionItemHeader = styled.div`
   font-family: "Roboto Condensed";
   font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 2px;
 `;
 
 const SectionItemContent = styled.div`
   font-weight: 300;
   text-align: justify;
-  font-size: 10px;
+  font-size: 12px;
 `;
 
 const Company = styled.p`
@@ -141,7 +144,7 @@ const Place = styled.p`
   color: #aaa;
   margin: 0;
   font-family: "Roboto";
-  font-size: 8px;
+  font-size: 10px;
   margin-top: 2px;
 `;
 
@@ -149,8 +152,8 @@ const Me = styled.div`
   background: url(${me}) no-repeat;
   background-size: cover;
   border-radius: 50%;
-  width: 34mm;
-  height: 34mm;
+  width: 36mm;
+  height: 36mm;
   background-position: 0mm -2mm;
 `;
 
@@ -174,6 +177,7 @@ const SectionItem = ({ entity, place, position, children, href, ...props }) => {
 };
 
 const Skillset = styled.div`
+  box-sizing: border-box;
   display: flex;
   position: relative;
   flex-direction: row;
@@ -224,7 +228,7 @@ const ToolTip = styled.div`
 
 const SkillInner = styled.div`
   font-weight: 300;
-  font-size: 10px;
+  font-size: 12px;
   padding: 2px 6px;
   white-space: nowrap;
   pointer-events: none;
@@ -384,7 +388,7 @@ const Language = ({ text, level = 0 }) => {
         style={{
           paddingLeft: 24,
           fontFamily: "Roboto Condensed",
-          fontSize: 11,
+          fontSize: 12,
           fontWeight: 600,
         }}
       >
@@ -393,7 +397,7 @@ const Language = ({ text, level = 0 }) => {
           style={{
             paddingLeft: 4,
             fontFamily: "Roboto Condensed",
-            fontSize: 8,
+            fontSize: 10,
             fontWeight: 500,
             color: "#999",
           }}
@@ -673,7 +677,7 @@ function CV() {
               <SectionItem
                 entity="A Place For Now"
                 place="Eindhoven, NL"
-                position="Lead Frontend Developer & Development Operations"
+                position="Lead Frontend Developer"
                 href="https://github.com/nstylo/aplacefornow.nl"
               >
                 Implementing a modern web application frontend using ReactJS and
@@ -762,40 +766,36 @@ function CV() {
             </Section>
             <Section header="Personal Information">
               <SectionItemContent>
-                I am a very inquisitive person by nature. Spending time on
-                learning new things gives me pleasure and a feeling of
-                accomplishment. Learning Computer Science empowered me with a
-                potent toolset for solving complex and creative problems. I see
-                computers and the programming of such as a huge sandbox
-                environment with sheer endless opportunity to create.
-                <br />
-                <br />
-                As a kid I loved designing my own board- and card-games and as a
+                {/* TODO: rework this section */}I am a very inquisitive person
+                by nature. Spending time on learning new things gives me
+                pleasure and a feeling of accomplishment. Learning Computer
+                Science empowered me with a potent toolset for solving complex
+                and creative problems. I see computers and the programming of
+                such as a huge sandbox environment with sheer endless
+                opportunity to create.
+                {/* As a kid I loved designing my own board- and card-games and as a
                 teenager I started to modify computer games. Back then I
                 perceived computer programming as some sort of wizardry, which
-                is why I value the power I am given now even more.
+                  is why I value the power I am given now even more. */}
                 <br />
-                <br />
-                I spend a significant amount of my current spare time on working
-                with modern web-frameworks like ReactJS and VueJS, learning
+                <br />I spend a significant amount of my current spare time on
+                working with modern web-frameworks like ReactJS, learning
                 systems languages like C/C++ as well as delving into functional
                 programming using Haskell. Furthermore I maintain a special
                 interest in the Linux operating system as well as other free and
                 open source software, which enable me to be a more effective
                 software developer.
-                <br />
-                <br />
-                Programming is a tool and is used as a means for solving a
+                {/*Programming is a tool and is used as a means for solving a
                 subset of problems. Therefore, it is my ambition to learn a
                 multitude of various skills which in turn give me the ability to
                 integrate diverse knowledge into the process of solving
-                problems.
+                problems.*/}
                 <br />
                 <br />
                 My other interests comprise of playing and listening to music,
-                drawing, reading, adventurous traveling and cooking. When I am
-                not immersed in one of my hobbies I enjoy spending time with
-                Family, Friends and meeting new people.
+                drawing, reading, adventurous traveling and cooking.
+                {/*When I am not immersed in one of my hobbies I enjoy spending time with
+                  Family, Friends and meeting new people.*/}
               </SectionItemContent>
             </Section>
           </Content>
