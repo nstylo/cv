@@ -252,7 +252,9 @@ const bordercolor_disabled = keyframes`
   }
 `;
 
-const SkillOuter = styled.div`
+const SkillOuter = styled.a`
+  color: inherit;
+  text-decoration: none;
   box-sizing: border-box;
   background-color: white;
   margin: 0 4px 4px 0;
@@ -314,6 +316,13 @@ const Skill = ({ wikiText, wikiDisabled, text, ...props }) => {
 
   return (
     <SkillOuter
+      // TODO: links are not disabled on print, they route to my cv
+      href={
+        wikiDisabled ? "/" : `https://en.wikipedia.org/wiki/${wikiText || text}`
+      }
+      onClick={(e) => wikiDisabled && e.preventDefault()}
+      aria-disabled={!!wikiDisabled}
+      target="_blank"
       TooltipDisabled={wikiDisabled}
       onMouseEnter={() => setIsShown(true)}
       onMouseLeave={() => setIsShown(false)}
