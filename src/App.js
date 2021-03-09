@@ -8,6 +8,12 @@ import email from "./email.png";
 import github from "./github.png";
 import axios from "axios";
 
+const UL = styled.ul`
+  margin-block-start: 0.2em;
+  margin-block-end: 0.2em;
+  padding-inline-start: 32px;
+`;
+
 const CVouter = styled.div`
   display: flex;
   justify-content: center;
@@ -181,7 +187,7 @@ const SectionItem = ({
   ...props
 }) => {
   return (
-    <SectionItemWrapper>
+    <SectionItemWrapper {...props}>
       <SectionItemLeft>
         <Company>
           <A href={href} target="blank_" color="#4d4d4d">
@@ -208,7 +214,6 @@ const Skillset = styled.div`
   flex-direction: row;
   justify-content: flex-end;
   flex-wrap: wrap;
-  padding-left: 5mm;
 `;
 
 const fadeIn = keyframes`
@@ -370,6 +375,33 @@ const Bubble = styled.div`
   border-radius: 50%;
   margin-left: 3px;
   background-color: ${(props) => (props.active === true ? "#21a021" : "#ccc")};
+`;
+
+const Hobbies = styled.div`
+  box-sizing: border-box;
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+`;
+
+const HobbyOuter = styled.a`
+  color: inherit;
+  text-decoration: none;
+  box-sizing: border-box;
+  background-color: white;
+  margin: 0 4px 4px 0;
+  border: 0.1pt solid #aaa;
+  border-radius: 5px;
+  position: relative;
+`;
+
+const HobbyInner = styled.div`
+  font-weight: 300;
+  font-size: 12px;
+  padding: 2px 6px;
+  white-space: nowrap;
 `;
 
 const LanguageWrapper = styled.div`
@@ -581,7 +613,7 @@ function CV() {
                 { text: "English", level: 3 },
                 { text: "Dutch", level: 1 },
               ].map((lang) => (
-                <Language text={lang.text} level={lang.level} />
+                <Language key={lang.text} text={lang.text} level={lang.level} />
               ))}
             </SidebarSection>
             <SidebarSection>
@@ -630,14 +662,19 @@ function CV() {
                   { text: "NodeJS", wikiText: "Node.js", wikiDisabled: false },
                   { text: "GraphQL", wikiText: "", wikiDisabled: false },
                   {
-                    text: "styled-components",
+                    text: "TypeScript",
                     wikiText: "",
-                    wikiDisabled: true,
+                    wikiDisabled: false,
                   },
-                  { text: "Material-UI", wikiText: "", wikiDisabled: true },
-                  { text: "GatsbyJS", wikiText: "", wikiDisabled: true },
+                  // {
+                  //   text: "styled-components",
+                  //   wikiText: "",
+                  //   wikiDisabled: true,
+                  // },
+                  // { text: "Material-UI", wikiText: "", wikiDisabled: true },
+                  // { text: "GatsbyJS", wikiText: "", wikiDisabled: true },
                   {
-                    text: "Google Cloud Platform",
+                    text: "Google Cloud",
                     wikiText: "",
                     wikiDisabled: false,
                   },
@@ -655,6 +692,23 @@ function CV() {
                   />
                 ))}
               </Skillset>
+            </SidebarSection>
+            <SidebarSection>
+              <SidebarHeader>Interests</SidebarHeader>
+              <Hobbies>
+                {[
+                  "Cooking",
+                  "Sketching",
+                  "Playing Guitar",
+                  "Financial Economics",
+                  "Cryptocurrency",
+                  "Chess",
+                ].map((item) => (
+                  <HobbyOuter>
+                    <HobbyInner>{item}</HobbyInner>
+                  </HobbyOuter>
+                ))}
+              </Hobbies>
             </SidebarSection>
           </Sidebar>
           <Content>
@@ -700,14 +754,17 @@ function CV() {
                 date="August 2020 - Present"
                 href="https://www.codeyellow.nl/"
               >
-                Developing bespoke business software using ReactJS with MobX,
-                Django and PostgreSQL. Application maintenance and support.
-                Designing and implementing application modules, most notably a
-                wagemanager backend which employs a custom parser which compiles
-                rules defined by customer, stored as recursively defined
-                relational models, into SQL insert queries to store wages.
-                Direct contact to customer. Translating customer needs into
-                software solutions.
+                <UL>
+                  <li>
+                    Developing custom business software using ReactJS with MobX,
+                    Django and PostgreSQL.
+                  </li>
+                  <li>Designing and implementing application modules.</li>
+                  <li>
+                    Interacting directly with customers and translating their
+                    needs into software solutions.
+                  </li>
+                </UL>
               </SectionItem>
               <SectionItem
                 entity="Hable Accessibility"
@@ -726,9 +783,17 @@ function CV() {
                 date="March 2020 - November 2020"
                 href="https://github.com/nstylo/aplacefornow.nl"
               >
-                Implementing a modern web application frontend using ReactJS and
-                MaterialUI within a small team. Responsible for CI/CD on Google
-                Cloud using Docker and Git for version control.
+                <UL>
+                  <li>
+                    Implementing a modern web application using ReactJS and
+                    MaterialUI.
+                  </li>
+                  <li>
+                    Responsible for Continuous Integration on Google Cloud using
+                    Docker.
+                  </li>
+                  <li>Git for version control.</li>
+                </UL>
               </SectionItem>
               <SectionItem
                 entity="Code Product Solutions B.V."
@@ -737,32 +802,36 @@ function CV() {
                 date="July 2019 - August 2019"
                 href="https://www.code-ps.com/office/id11603/eindhoven/"
               >
-                Implementing a modern business application frontend with ReactJS
-                which consumes REST API. Workflow via GitLab CI. Testing with
-                Jest.
+                <UL>
+                  <li>
+                    Developing an interface for customers using ReactJS and REST
+                    API which automates simulation processes.
+                  </li>
+                  <li>Workflow via GitLab CI.</li>
+                  <li>Testing with Jest.</li>
+                </UL>
               </SectionItem>
-              <SectionItem
+              {/*<SectionItem
                 entity="INNSIDE Aachen"
                 place="Aachen, DE"
                 position="Commis de Rang & Barkeeper"
                 date="March 2017 - August 2017"
                 href="https://www.melia.com/en/hotels/germany/aachen/innside-aachen/index.htm"
               >
-                Serving and building relationships with customers by catering to
-                their individual needs. Preparing refined alcoholic beverages
-                and coffee.
+                <UL>
+                  <li>
+                    Serving and customer relations in Germany and New Zealand.
+                  </li>
+                </UL>
               </SectionItem>
               <SectionItem
-                entity="The Thorndon Hotel Wellington"
+                style={{ marginTop: "-10px" }}
+                entity="The Thorndon Hotel"
                 place="Wellington, NZ"
                 position="Commis de Rang"
                 date="November 2014 - March 2015"
                 href="https://www.rydges.com/accommodation/new-zealand/the-thorndon-hotel-wellington/"
-              >
-                Serving and building relationships with customers by catering to
-                their individual needs. Working in a professional team focused
-                on customer satisfaction
-              </SectionItem>
+              ></SectionItem>*/}
             </Section>
             <Section header="Internships & Non-Professional Experience">
               <SectionItem
@@ -771,10 +840,21 @@ function CV() {
                 position="Student Assistant"
                 href="https://www.tue.nl/en/"
               >
-                Student assistant for the courses Java Programming, Discrete
-                Structures, Data Structures, Human Technology Interaction &
-                Webtech, Logic & Set Theory. Grade assignments, answer questions
-                and provide feedback to students.
+                Student assistant for five courses.
+                <br />
+                <UL>
+                  <li>
+                    Java Progrmming, Discrete Structures, Data Structures, Human
+                    Technology Interaction & Webtech, Logic & Set Theory
+                  </li>
+                </UL>
+                {/*<UL>
+                  <li>Java Programming</li>
+                  <li>Discrete Structures</li>
+                  <li>Data Structures</li>
+                  <li>Human Technology Interaction & Webtech</li>
+                  <li>Logic & Set Theory</li>
+                </UL>*/}
               </SectionItem>
               <SectionItem
                 entity="Nestlé Purina"
@@ -782,7 +862,9 @@ function CV() {
                 position="Intern Marketing & Sales"
                 href="https://www.purina.com/"
               >
-                Conducting social media analysis on competitors.
+                <UL>
+                  <li>Social media analysis on competitor products.</li>
+                </UL>
               </SectionItem>
               <SectionItem
                 entity="Evonik Industries"
@@ -790,8 +872,10 @@ function CV() {
                 position="Intern IT Administration"
                 href="https://www.purina.com/"
               >
-                Troubleshooting soft- and hardware problems, assisting in
-                rolling out new hardware to internal personnel.
+                <UL>
+                  <li>Support for software and hardware issues.</li>
+                  <li>Installing new hardware for employees.</li>
+                </UL>
               </SectionItem>
             </Section>
             <Section header="Licenses & Certifications">
@@ -806,35 +890,44 @@ function CV() {
             </Section>
             <Section header="Personal Information">
               <SectionItemContent>
-                {/* TODO: rework this section */}I am a very inquisitive person
+                I am a problem solver, fueled by curiosity and a passion for
+                learning new things. My goal is to leverage my creativity and
+                skill set in computer science to help solve complex real-world
+                problems.
+                <br />I am committed to expanding my skills as a software
+                developer and therefore I devote considerable time to
+                experimenting with modern web-frameworks, functional
+                programming, and systems programming languages. My specific
+                areas of interest include the Linux operating system, open
+                source software, and blockchain technology.
+                {/*
+                I am a very inquisitive person
                 by nature. Spending time on learning new things gives me
                 pleasure and a feeling of accomplishment. Learning Computer
                 Science empowered me with a potent toolset for solving complex
                 and creative problems. I see computers and the programming of
                 such as a huge sandbox environment with sheer endless
                 opportunity to create.
+                */}
                 {/* As a kid I loved designing my own board- and card-games and as a
                 teenager I started to modify computer games. Back then I
                 perceived computer programming as some sort of wizardry, which
-                  is why I value the power I am given now even more. */}
-                <br />
-                <br />I spend a significant amount of my current spare time on
+                  is why I value the power I am given now even more.
+                I spend a significant amount of my current spare time on
                 working with modern web-frameworks like ReactJS, learning
                 systems languages like C/C++ as well as delving into functional
                 programming using Haskell. Furthermore I maintain a special
                 interest in the Linux operating system as well as other free and
                 open source software, which enable me to be a more effective
                 software developer.
-                {/*Programming is a tool and is used as a means for solving a
+                Programming is a tool and is used as a means for solving a
                 subset of problems. Therefore, it is my ambition to learn a
                 multitude of various skills which in turn give me the ability to
                 integrate diverse knowledge into the process of solving
-                problems.*/}
-                <br />
-                <br />
+                problems.
                 My other interests comprise of playing and listening to music,
                 drawing, reading, adventurous traveling and cooking.
-                {/*When I am not immersed in one of my hobbies I enjoy spending time with
+                When I am not immersed in one of my hobbies I enjoy spending time with
                   Family, Friends and meeting new people.*/}
               </SectionItemContent>
             </Section>
