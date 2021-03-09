@@ -91,6 +91,11 @@ const SectionHeader = styled.div`
   color: #4d4d4d;
 `;
 
+const PositionDate = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+
 const HR = styled.div`
   flex-grow: 1;
   width: 100%;
@@ -148,6 +153,15 @@ const Place = styled.p`
   margin-top: 2px;
 `;
 
+const Date = styled.p`
+  font-weight: 300;
+  color: #aaa;
+  margin: 0;
+  font-family: "Roboto";
+  font-size: 10px;
+  margin-top: 2px;
+`;
+
 const Me = styled.div`
   background: url(${me}) no-repeat;
   background-size: cover;
@@ -157,7 +171,15 @@ const Me = styled.div`
   background-position: 0mm -2mm;
 `;
 
-const SectionItem = ({ entity, place, position, children, href, ...props }) => {
+const SectionItem = ({
+  entity,
+  place,
+  position,
+  date,
+  children,
+  href,
+  ...props
+}) => {
   return (
     <SectionItemWrapper>
       <SectionItemLeft>
@@ -169,7 +191,10 @@ const SectionItem = ({ entity, place, position, children, href, ...props }) => {
         <Place>{place}</Place>
       </SectionItemLeft>
       <SectionItemRight>
-        <SectionItemHeader>{position}</SectionItemHeader>
+        <PositionDate>
+          <SectionItemHeader>{position}</SectionItemHeader>
+          <Date>{date}</Date>
+        </PositionDate>
         <SectionItemContent>{children}</SectionItemContent>
       </SectionItemRight>
     </SectionItemWrapper>
@@ -672,6 +697,7 @@ function CV() {
                 entity="Code Yellow B.V."
                 place="Eindhoven, NL"
                 position="Fullstack Software Engineer"
+                date="August 2020 - Present"
                 href="https://www.codeyellow.nl/"
               >
                 Developing bespoke business software using ReactJS with MobX,
@@ -684,9 +710,20 @@ function CV() {
                 software solutions.
               </SectionItem>
               <SectionItem
+                entity="Hable Accessibility"
+                place="Eindhoven, NL"
+                position="Software Engineer"
+                date="March 2020 - Present"
+                href="https://www.iamhable.com/"
+              >
+                Writing a parser in Python which transpiles a custom language
+                into C++ source code.
+              </SectionItem>
+              <SectionItem
                 entity="A Place For Now"
                 place="Eindhoven, NL"
                 position="Lead Frontend Developer"
+                date="March 2020 - November 2020"
                 href="https://github.com/nstylo/aplacefornow.nl"
               >
                 Implementing a modern web application frontend using ReactJS and
@@ -694,18 +731,10 @@ function CV() {
                 Cloud using Docker and Git for version control.
               </SectionItem>
               <SectionItem
-                entity="Hable Accessibility"
-                place="Eindhoven, NL"
-                position="Software Engineer"
-                href="https://www.iamhable.com/"
-              >
-                Writing a parser in Python which transpiles a custom language
-                into C++ source code.
-              </SectionItem>
-              <SectionItem
                 entity="Code Product Solutions B.V."
                 place="Eindhoven, NL"
                 position="Frontend Developer"
+                date="July 2019 - August 2019"
                 href="https://www.code-ps.com/office/id11603/eindhoven/"
               >
                 Implementing a modern business application frontend with ReactJS
@@ -716,6 +745,7 @@ function CV() {
                 entity="INNSIDE Aachen"
                 place="Aachen, DE"
                 position="Commis de Rang & Barkeeper"
+                date="March 2017 - August 2017"
                 href="https://www.melia.com/en/hotels/germany/aachen/innside-aachen/index.htm"
               >
                 Serving and building relationships with customers by catering to
@@ -726,6 +756,7 @@ function CV() {
                 entity="The Thorndon Hotel Wellington"
                 place="Wellington, NZ"
                 position="Commis de Rang"
+                date="November 2014 - March 2015"
                 href="https://www.rydges.com/accommodation/new-zealand/the-thorndon-hotel-wellington/"
               >
                 Serving and building relationships with customers by catering to
