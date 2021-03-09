@@ -6,6 +6,7 @@ import linkedin from "./linkedin.png";
 import tel from "./tel.png";
 import email from "./email.png";
 import github from "./github.png";
+import cv from "./cv.png";
 import axios from "axios";
 
 const UL = styled.ul`
@@ -119,7 +120,7 @@ const SectionItemWrapper = styled.div`
   flex-direction: row;
   font-size: 11px;
   color: #4d4d4d;
-  margin: 10px 0;
+  margin: 8px 0;
 `;
 
 const SectionItemLeft = styled.div`
@@ -433,6 +434,12 @@ const A = styled.a`
   }
 `;
 
+const SidebarLinkContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+`;
+
 const Language = ({ text, level = 0 }) => {
   let level_text;
   switch (level) {
@@ -533,7 +540,7 @@ function CV() {
               <br />
               <br />
               <div style={{ lineHeight: 2 }}>
-                <div>
+                <SidebarLinkContainer>
                   <A
                     color="#21a021"
                     href="tel:+31682220490"
@@ -547,8 +554,8 @@ function CV() {
                     alt="phone number"
                     style={{ width: 12, height: 12, marginLeft: 10 }}
                   />
-                </div>
-                <div>
+                </SidebarLinkContainer>
+                <SidebarLinkContainer>
                   <A
                     color="#21a021"
                     href="mailto:niklas@stylianou.info"
@@ -562,8 +569,8 @@ function CV() {
                     alt="email"
                     style={{ width: 12, height: 12, marginLeft: 10 }}
                   />
-                </div>
-                <div>
+                </SidebarLinkContainer>
+                <SidebarLinkContainer>
                   <A
                     color="#21a021"
                     href="https://github.com/nstylo"
@@ -577,8 +584,8 @@ function CV() {
                     alt="github"
                     style={{ width: 12, height: 12, marginLeft: 10 }}
                   />
-                </div>
-                <div>
+                </SidebarLinkContainer>
+                <SidebarLinkContainer>
                   <A
                     color="#21a021"
                     href="https://linkedin.com/in/niklas-stylianou"
@@ -592,8 +599,8 @@ function CV() {
                     alt="linkedin"
                     style={{ width: 12, height: 12, marginLeft: 10 }}
                   />
-                </div>
-                <div>
+                </SidebarLinkContainer>
+                <SidebarLinkContainer>
                   <A
                     color="#21a021"
                     href="https://homerow.dev"
@@ -607,7 +614,22 @@ function CV() {
                     alt="homepage"
                     style={{ width: 12, height: 12, marginLeft: 10 }}
                   />
-                </div>
+                </SidebarLinkContainer>
+                <SidebarLinkContainer>
+                  <A
+                    color="#21a021"
+                    href="https://nstylo.github.io/cv/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    my web cv
+                  </A>
+                  <img
+                    src={cv}
+                    alt="cv"
+                    style={{ width: 12, height: 12, marginLeft: 10 }}
+                  />
+                </SidebarLinkContainer>
               </div>
             </SidebarSection>
             <SidebarSection>
