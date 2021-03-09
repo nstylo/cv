@@ -15,6 +15,7 @@ const UL = styled.ul`
 `;
 
 const CVouter = styled.div`
+  height: 29.7cm;
   display: flex;
   justify-content: center;
   width: 100%;
@@ -85,19 +86,20 @@ const SidebarSection = styled.div`
 
 const Content = styled.main`
   width: 100%;
-  padding: 10px 42px 10px 22px;
+  padding: 6px 30px 10px 22px;
 `;
 
 const SectionHeader = styled.div`
   white-space: nowrap;
   font-family: "Roboto Condensed";
   font-weight: 500;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 600;
   color: #4d4d4d;
 `;
 
 const PositionDate = styled.div`
+  width: 100%;
   display: flex;
   justify-content: space-between;
 `;
@@ -115,7 +117,7 @@ const HR = styled.div`
 const SectionItemWrapper = styled.div`
   display: flex;
   flex-direction: row;
-  font-size: 12px;
+  font-size: 11px;
   color: #4d4d4d;
   margin: 10px 0;
 `;
@@ -129,19 +131,21 @@ const SectionItemLeft = styled.div`
   line-height: 1.4;
 `;
 
-const SectionItemRight = styled.div``;
+const SectionItemRight = styled.div`
+  width: 100%;
+`;
 
 const SectionItemHeader = styled.div`
   font-family: "Roboto Condensed";
   font-weight: 600;
-  font-size: 14px;
+  font-size: 12px;
   margin-bottom: 2px;
 `;
 
 const SectionItemContent = styled.div`
   font-weight: 300;
   text-align: justify;
-  font-size: 12px;
+  font-size: 11px;
 `;
 
 const Company = styled.p`
@@ -701,10 +705,10 @@ function CV() {
                   "Sketching",
                   "Playing Guitar",
                   "Financial Economics",
-                  "Cryptocurrency",
+                  "Blockchain",
                   "Chess",
                 ].map((item) => (
-                  <HobbyOuter>
+                  <HobbyOuter key={item}>
                     <HobbyInner>{item}</HobbyInner>
                   </HobbyOuter>
                 ))}
@@ -712,34 +716,48 @@ function CV() {
             </SidebarSection>
           </Sidebar>
           <Content>
+            <Section header="Personal Information">
+              <SectionItemContent>
+                I am a problem solver, fueled by curiosity and a passion for
+                learning new things. My goal is to leverage my creativity and
+                skill set in computer science to help solve complex real-world
+                problems.
+                <br />I am committed to expanding my skills as a software
+                developer and therefore I devote considerable time to
+                experimenting with modern web-frameworks, functional
+                programming, and systems programming languages. My specific
+                areas of interest include the Linux operating system, open
+                source software, and blockchain technology.
+              </SectionItemContent>
+            </Section>
             <Section header="Education">
               <SectionItem
                 entity="Eindhoven University of Technology, NL"
-                place="2017-2021"
                 position="Bachelor of Science"
+                date="2017 - 2021"
                 href="https://www.tue.nl/en/"
               >
                 Computer Science & Engineering
               </SectionItem>
               <SectionItem
                 entity="RWTH Aachen, DE"
-                place="2015-2017"
                 position="Bachelor of Science"
+                date="2015 - 2017"
                 href="https://www.rwth-aachen.de/go/id/a/?lidx=1"
               >
                 Civil Engineering (discontinued)
               </SectionItem>
               <SectionItem
                 entity="English Teaching College Wellington, NZ"
-                place="2014-2015"
                 position="CAE C1"
+                date="2014 - 2015"
                 href="https://www.etc.ac.nz/"
               >
                 English
               </SectionItem>
               <SectionItem
                 entity="Freiherr-vom-Stein Gymnasium, DE"
-                place="2006-2014"
+                date="2006 - 2014"
                 position="Abitur"
                 href="http://www.stein.kleve.de/"
               >
@@ -773,8 +791,12 @@ function CV() {
                 date="March 2020 - Present"
                 href="https://www.iamhable.com/"
               >
-                Writing a parser in Python which transpiles a custom language
-                into C++ source code.
+                <UL>
+                  <li>
+                    Writing a parser in Python which transpiles a custom
+                    language into C++ source code.
+                  </li>
+                </UL>
               </SectionItem>
               <SectionItem
                 entity="A Place For Now"
@@ -792,7 +814,6 @@ function CV() {
                     Responsible for Continuous Integration on Google Cloud using
                     Docker.
                   </li>
-                  <li>Git for version control.</li>
                 </UL>
               </SectionItem>
               <SectionItem
@@ -807,8 +828,7 @@ function CV() {
                     Developing an interface for customers using ReactJS and REST
                     API which automates simulation processes.
                   </li>
-                  <li>Workflow via GitLab CI.</li>
-                  <li>Testing with Jest.</li>
+                  <li>Workflow via GitLab CI and testing with Jest.</li>
                 </UL>
               </SectionItem>
               {/*<SectionItem
@@ -838,6 +858,7 @@ function CV() {
                 entity="Eindhoven University of Technology"
                 place="Eindhoven, NL"
                 position="Student Assistant"
+                date="September 2018 - November 2019"
                 href="https://www.tue.nl/en/"
               >
                 Student assistant for five courses.
@@ -860,6 +881,7 @@ function CV() {
                 entity="Nestlé Purina"
                 place="Euskirchen, DE"
                 position="Intern Marketing & Sales"
+                date="October 2013 - November 2013"
                 href="https://www.purina.com/"
               >
                 <UL>
@@ -870,6 +892,7 @@ function CV() {
                 entity="Evonik Industries"
                 place="Krefeld, DE"
                 position="Intern IT Administration"
+                date="Juni 2012 - Juli 2012"
                 href="https://www.purina.com/"
               >
                 <UL>
@@ -887,49 +910,6 @@ function CV() {
               >
                 Credential ID: 0047776898
               </SectionItem>
-            </Section>
-            <Section header="Personal Information">
-              <SectionItemContent>
-                I am a problem solver, fueled by curiosity and a passion for
-                learning new things. My goal is to leverage my creativity and
-                skill set in computer science to help solve complex real-world
-                problems.
-                <br />I am committed to expanding my skills as a software
-                developer and therefore I devote considerable time to
-                experimenting with modern web-frameworks, functional
-                programming, and systems programming languages. My specific
-                areas of interest include the Linux operating system, open
-                source software, and blockchain technology.
-                {/*
-                I am a very inquisitive person
-                by nature. Spending time on learning new things gives me
-                pleasure and a feeling of accomplishment. Learning Computer
-                Science empowered me with a potent toolset for solving complex
-                and creative problems. I see computers and the programming of
-                such as a huge sandbox environment with sheer endless
-                opportunity to create.
-                */}
-                {/* As a kid I loved designing my own board- and card-games and as a
-                teenager I started to modify computer games. Back then I
-                perceived computer programming as some sort of wizardry, which
-                  is why I value the power I am given now even more.
-                I spend a significant amount of my current spare time on
-                working with modern web-frameworks like ReactJS, learning
-                systems languages like C/C++ as well as delving into functional
-                programming using Haskell. Furthermore I maintain a special
-                interest in the Linux operating system as well as other free and
-                open source software, which enable me to be a more effective
-                software developer.
-                Programming is a tool and is used as a means for solving a
-                subset of problems. Therefore, it is my ambition to learn a
-                multitude of various skills which in turn give me the ability to
-                integrate diverse knowledge into the process of solving
-                problems.
-                My other interests comprise of playing and listening to music,
-                drawing, reading, adventurous traveling and cooking.
-                When I am not immersed in one of my hobbies I enjoy spending time with
-                  Family, Friends and meeting new people.*/}
-              </SectionItemContent>
             </Section>
           </Content>
         </Container>
