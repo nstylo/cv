@@ -527,7 +527,7 @@ function CV() {
         <Header>Niklas Stylianou</Header>
         <Container>
           <Sidebar>
-            <SidebarSection style={{ margin: "32px 0 36px 0" }}>
+            <SidebarSection style={{ margin: "8px 0 24px 0" }}>
               <Center>
                 <Me />
               </Center>
@@ -663,12 +663,12 @@ function CV() {
                   },
                   { text: "HTML5", wikiText: "", wikiDisabled: false },
                   { text: "CSS", wikiText: "", wikiDisabled: false },
+                  { text: "NodeJS", wikiText: "Node.js", wikiDisabled: false },
                   {
-                    text: "Bash",
-                    wikiText: "Bash_(Unix_shell)",
+                    text: "TypeScript",
+                    wikiText: "",
                     wikiDisabled: false,
                   },
-                  { text: "SQL", wikiText: "", wikiDisabled: false },
                   {
                     text: "Docker",
                     wikiText: "Docker_(software)",
@@ -685,20 +685,12 @@ function CV() {
                     wikiDisabled: false,
                   },
                   { text: "C++14", wikiText: "C++", wikiDisabled: false },
-                  { text: "NodeJS", wikiText: "Node.js", wikiDisabled: false },
-                  { text: "GraphQL", wikiText: "", wikiDisabled: false },
                   {
-                    text: "TypeScript",
-                    wikiText: "",
+                    text: "Bash",
+                    wikiText: "Bash_(Unix_shell)",
                     wikiDisabled: false,
                   },
-                  // {
-                  //   text: "styled-components",
-                  //   wikiText: "",
-                  //   wikiDisabled: true,
-                  // },
-                  // { text: "Material-UI", wikiText: "", wikiDisabled: true },
-                  // { text: "GatsbyJS", wikiText: "", wikiDisabled: true },
+                  { text: "GraphQL", wikiText: "", wikiDisabled: false },
                   {
                     text: "Google Cloud",
                     wikiText: "",
@@ -726,9 +718,11 @@ function CV() {
                   "Cooking",
                   "Sketching",
                   "Playing Guitar",
-                  "Financial Economics",
-                  "Blockchain",
                   "Chess",
+                  "Cycling",
+                  "Strategy Games",
+                  "Decentralized Systems",
+                  "Financial Economics",
                 ].map((item) => (
                   <HobbyOuter key={item}>
                     <HobbyInner>{item}</HobbyInner>
@@ -742,10 +736,10 @@ function CV() {
               <SectionItemContent>
                 I am a problem solver, fueled by curiosity and a passion for
                 learning new things. My goal is to leverage my creativity and
-                skill set in computer science to help solve complex real-world
+                skill set in computer science to solve complex real-world
                 problems.
                 <br />I am committed to expanding my skills as a software
-                developer and therefore I devote considerable time to
+                engineer and therefore I devote considerable time to
                 experimenting with modern web-frameworks, functional
                 programming, and systems programming languages. My specific
                 areas of interest include the Linux operating system, open
@@ -928,6 +922,7 @@ function CV() {
                 entity="Massey University"
                 place="Wellingtion, NZ"
                 position="Cambridge English Level 2 Certificate"
+                date="December 2014"
                 href="https://www.massey.ac.nz/"
               >
                 Credential ID: 0047776898
