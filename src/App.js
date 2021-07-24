@@ -600,21 +600,23 @@ function CV() {
                     style={{ width: 12, height: 12, marginLeft: 10 }}
                   />
                 </SidebarLinkContainer>
-                <SidebarLinkContainer>
-                  <A
-                    color="#21a021"
-                    href="https://homerow.dev"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    homerow.dev
-                  </A>
-                  <img
-                    src={home}
-                    alt="homepage"
-                    style={{ width: 12, height: 12, marginLeft: 10 }}
-                  />
-                </SidebarLinkContainer>
+                {
+                  // <SidebarLinkContainer>
+                  //   <A
+                  //     color="#21a021"
+                  //     href="https://homerow.dev"
+                  //     target="_blank"
+                  //     rel="noreferrer"
+                  //   >
+                  //     homerow.dev
+                  //   </A>
+                  //   <img
+                  //     src={home}
+                  //     alt="homepage"
+                  //     style={{ width: 12, height: 12, marginLeft: 10 }}
+                  //   />
+                  // </SidebarLinkContainer>
+                }
                 <SidebarLinkContainer>
                   <A
                     color="#21a021"
@@ -647,15 +649,20 @@ function CV() {
               <Skillset>
                 {[
                   { text: "JavaScript", wikiText: "", wikiDisabled: false },
-                  { text: "ReactJS", wikiText: "", wikiDisabled: false },
-                  { text: "Linux", wikiText: "", wikiDisabled: false },
-                  { text: "Git", wikiText: "", wikiDisabled: false },
                   {
                     text: "Python",
                     wikiText: "Python_(programming_language)",
                     wikiDisabled: false,
                   },
+                  { text: "ReactJS", wikiText: "", wikiDisabled: false },
+                  { text: "Linux", wikiText: "", wikiDisabled: false },
+                  { text: "Git", wikiText: "", wikiDisabled: false },
                   { text: "PostgreSQL", wikiText: "", wikiDisabled: false },
+                  {
+                    text: "Java",
+                    wikiText: "Java_(programming_language)",
+                    wikiDisabled: false,
+                  },
                   {
                     text: "Django",
                     wikiText: "Django_(web_framework)",
@@ -675,11 +682,6 @@ function CV() {
                     wikiDisabled: false,
                   },
                   {
-                    text: "Java",
-                    wikiText: "Java_(programming_language)",
-                    wikiDisabled: false,
-                  },
-                  {
                     text: "C",
                     wikiText: "C_(programming_language)",
                     wikiDisabled: false,
@@ -689,6 +691,16 @@ function CV() {
                     text: "Bash",
                     wikiText: "Bash_(Unix_shell)",
                     wikiDisabled: false,
+                  },
+                  {
+                    text: "Haskell",
+                    wikiText: "Haskell_(programming_language)",
+                    wikiDisabled: false,
+                  },
+                  {
+                    text: "Plutus",
+                    wikiText: "",
+                    wikiDisabled: true,
                   },
                   { text: "GraphQL", wikiText: "", wikiDisabled: false },
                   {
@@ -722,7 +734,6 @@ function CV() {
                   "Cycling",
                   "Strategy Games",
                   "Decentralized Systems",
-                  "Financial Economics",
                 ].map((item) => (
                   <HobbyOuter key={item}>
                     <HobbyInner>{item}</HobbyInner>
@@ -755,14 +766,16 @@ function CV() {
               >
                 Computer Science & Engineering
               </SectionItem>
-              <SectionItem
-                entity="RWTH Aachen, DE"
-                position="Bachelor of Science"
-                date="2015 - 2017"
-                href="https://www.rwth-aachen.de/go/id/a/?lidx=1"
-              >
-                Civil Engineering (discontinued)
-              </SectionItem>
+              {
+                // <SectionItem
+                //   entity="RWTH Aachen, DE"
+                //   position="Bachelor of Science"
+                //   date="2015 - 2017"
+                //   href="https://www.rwth-aachen.de/go/id/a/?lidx=1"
+                // >
+                //   Civil Engineering (discontinued)
+                // </SectionItem>
+              }
               <SectionItem
                 entity="English Teaching College Wellington, NZ"
                 position="CAE C1"
@@ -784,14 +797,15 @@ function CV() {
               <SectionItem
                 entity="Code Yellow B.V."
                 place="Eindhoven, NL"
-                position="Fullstack Software Engineer"
+                position="Software Engineer"
                 date="August 2020 - Present"
                 href="https://www.codeyellow.nl/"
               >
                 <UL>
+                  <li>Developing custom business software.</li>
                   <li>
-                    Developing custom business software using ReactJS with MobX,
-                    Django and PostgreSQL.
+                    Django, Python, PostgreSQL, ReactJS, MobX, Docker, Cypress,
+                    Linux.
                   </li>
                   <li>Designing and implementing application modules.</li>
                   <li>
@@ -927,6 +941,13 @@ function CV() {
               >
                 Credential ID: 0047776898
               </SectionItem>
+              <SectionItem
+                entity="Input Output (IOHK)"
+                position="Plutus Pioneer Program"
+                place="Online Course"
+                date="Juli 2021 - present"
+                href="https://developers.cardano.org/en/plutus-pioneer-program/"
+              ></SectionItem>
             </Section>
           </Content>
         </Container>
