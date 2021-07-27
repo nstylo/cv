@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styled, { keyframes, createGlobalStyle } from "styled-components";
+import { useTranslation } from "react-i18next";
 import me from "./Me.jpeg";
 import home from "./home.png";
 import linkedin from "./linkedin.png";
@@ -520,6 +521,22 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 function CV() {
+  const { t, i18n } = useTranslation();
+
+  const urlParams = new URLSearchParams(window.location.search);
+  const lang = urlParams.get("lang");
+
+  switch (lang) {
+    case "en":
+      i18n.changeLanguage(lang);
+      break;
+    case "de":
+      i18n.changeLanguage(lang);
+      break;
+    default:
+      i18n.changeLanguage("en");
+  }
+
   return (
     <CVouter>
       <GlobalStyle />
@@ -533,7 +550,7 @@ function CV() {
               </Center>
             </SidebarSection>
             <SidebarSection>
-              <SidebarHeader>Contact</SidebarHeader>
+              <SidebarHeader>{t("sidebar.header.contact")}</SidebarHeader>
               Achilleslaan 21, 5631BS
               <br />
               Eindhoven, NL
@@ -635,7 +652,7 @@ function CV() {
               </div>
             </SidebarSection>
             <SidebarSection>
-              <SidebarHeader>Languages</SidebarHeader>
+              <SidebarHeader>{t("sidebar.header.languages")}</SidebarHeader>
               {[
                 { text: "German", level: 4 },
                 { text: "English", level: 3 },
@@ -645,7 +662,7 @@ function CV() {
               ))}
             </SidebarSection>
             <SidebarSection>
-              <SidebarHeader>Skillset</SidebarHeader>
+              <SidebarHeader>{t("sidebar.header.skillset")}</SidebarHeader>
               <Skillset>
                 {[
                   { text: "JavaScript", wikiText: "", wikiDisabled: false },
@@ -724,16 +741,15 @@ function CV() {
               </Skillset>
             </SidebarSection>
             <SidebarSection>
-              <SidebarHeader>Interests</SidebarHeader>
+              <SidebarHeader>{t("sidebar.header.interests")}</SidebarHeader>
               <Hobbies>
                 {[
-                  "Cooking",
-                  "Sketching",
-                  "Playing Guitar",
-                  "Chess",
-                  "Cycling",
-                  "Strategy Games",
-                  "Decentralized Systems",
+                  t("sidebar.interests.interest1"),
+                  t("sidebar.interests.interest2"),
+                  t("sidebar.interests.interest3"),
+                  t("sidebar.interests.interest4"),
+                  t("sidebar.interests.interest5"),
+                  t("sidebar.interests.interest6"),
                 ].map((item) => (
                   <HobbyOuter key={item}>
                     <HobbyInner>{item}</HobbyInner>
