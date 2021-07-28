@@ -523,19 +523,21 @@ const GlobalStyle = createGlobalStyle`
 function CV() {
   const { t, i18n } = useTranslation();
 
-  const urlParams = new URLSearchParams(window.location.search);
-  const lang = urlParams.get("lang");
+  React.useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const lang = urlParams.get("lang");
 
-  switch (lang) {
-    case "en":
-      i18n.changeLanguage(lang);
-      break;
-    case "de":
-      i18n.changeLanguage(lang);
-      break;
-    default:
-      i18n.changeLanguage("en");
-  }
+    switch (lang) {
+      case "en":
+        i18n.changeLanguage(lang);
+        break;
+      case "de":
+        i18n.changeLanguage(lang);
+        break;
+      default:
+        i18n.changeLanguage("en");
+    }
+  }, []);
 
   return (
     <CVouter>
@@ -687,7 +689,11 @@ function CV() {
                   },
                   { text: "HTML5", wikiText: "", wikiDisabled: false },
                   { text: "CSS", wikiText: "", wikiDisabled: false },
-                  { text: "NodeJS", wikiText: "Node.js", wikiDisabled: false },
+                  {
+                    text: "NodeJS",
+                    wikiText: "Node.js",
+                    wikiDisabled: false,
+                  },
                   {
                     text: "TypeScript",
                     wikiText: "",

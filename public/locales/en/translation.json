@@ -1,0 +1,18 @@
+{
+  "sidebar": {
+    "header": {
+      "contact": "Contact",
+      "languages": "Languages",
+      "skillset": "Skillset",
+      "interests": "Interests"
+    },
+    "interests": {
+      "interest1": "Cooking",
+      "interest2": "Sketching",
+      "interest3": "Playing Guitar",
+      "interest4": "Chess",
+      "interest5": "Cycling, Touring",
+      "interest6": "Strategy Games"
+    }
+  }
+}
