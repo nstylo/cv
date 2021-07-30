@@ -1,9 +1,10 @@
 {
   "sidebar": {
+    "web_cv": "Online Lebenslauf",
     "header": {
       "contact": "Kontakt",
       "languages": "Sprachen",
-      "skillset": "Skillset",
+      "skillset": "Fähigkeiten",
       "interests": "Interessen"
     },
     "interests": {
@@ -11,8 +12,78 @@
       "interest2": "Zeichnen",
       "interest3": "Gitarre spielen",
       "interest4": "Schach",
-      "interest5": "Fahrradfahren, Touren",
+      "interest5": "Touren mit dem Fahrrad",
       "interest6": "Strategiespiele"
+    },
+    "languages": {
+      "language1": "Deutsch",
+      "language2": "Englisch",
+      "language3": "Niederländisch"
+    },
+    "language_subscript": {
+      "native": "Muttersprache",
+      "fluent": "Verhandlungssicher",
+      "intermediate": "Fortgeschritten",
+      "basic": "Anfänger"
     }
-  }
+  },
+  "personal_information": "Softwareentwickler. Leidenschaft für das Design und die Entwicklung von Anwendungen. Ich bin wissbegierig und immer bestrebt, meine Fähigkeiten zu erweitern. Meine neuesten Interessen sind Funktionale Programmierung und Intelligente Vertragsentwicklung.",
+  "header": {
+    "header1": "Über mich",
+    "header2": "Ausbildung",
+    "header3": "Berufserfahrung",
+    "header4": "Sonstige Erfahrung",
+    "header5": "Zertifikate & Weiterbildungen"
+  },
+  "experience": {
+    "job1": {
+      "job_desc_1": "Entwickeln von kundenspezifischer Software.",
+      "job_desc_2": "Django, Python, PostgreSQL, ReactJS, MobX, Docker, Cypress, Linux.",
+      "job_desc_3": "Entwerfen und implementieren von Anwendungsmodulen.",
+      "job_desc_4": "Interaktion mit Kunden und umsetzen ihrer Bedürfnisse in Softwarelösungen.",
+      "job_title": "Softwareentwickler"
+    },
+    "job2": {
+      "job_desc_1": "Schreiben eines Transpilers in Python, der domänenspezifische Sprache in C++-Quellcode übersetzt.",
+      "job_title": "Softwareentwickler"
+    },
+    "job3": {
+      "job_desc_1": "Entwickeln einer modernen Webapplikation mit ReactJS und MaterialUI.",
+      "job_desc_2": "Verantwortlich für 'Continuous Integration' in Google Cloud mit Docker.",
+      "job_title": "Frontend Entwickler"
+    },
+    "job4": {
+      "job_desc_1": "Entwickeln einer Kundenschnittstelle im Browser.",
+      "job_desc_2": "ReactJS, Ant Design, GitLab CI, Jest",
+      "job_title": "Frontend Entwickler"
+    }
+  },
+  "internships": {
+    "job1": {
+      "job_desc_1": "Verantwortlich für Benotung, Organisation und Feedback.",
+      "job_desc_2": "Java-Programmierung, Diskrete Strukturen, Daten Strukturen, Web-Technologie, Logik & Mengenlehre.",
+      "job_title": "Studentische Hilfskraft"
+    },
+    "job2": {
+      "job_desc_1": "Soziale Medien Analyse zu Konkurrenzprodukten.",
+      "job_title": "Praktikant Marketing & Vertrieb"
+    },
+    "job3": {
+      "job_desc_1": "Unterstützung bei Software- und Hardwareproblemen.",
+      "job_desc_2": "Installation neuer Hardware für Mitarbeiter.",
+      "job_title": "Praktikant IT-Administration"
+    }
+  },
+  "certifications": {
+    "cert1": {
+      "cert_desc_1": "Referenz ID: 0047776898",
+      "cert_title": "Cambridge English Level 2 Certificate"
+    },
+    "cert2": {
+      "cert_desc_1": "Intelligente Vertragsentwicklung für Cardano Blockchain.",
+      "cert_sub_title": "Online Kurs",
+      "cert_title": "Plutus Pioneer Program"
+    }
+  },
+  "present": "heute"
 }

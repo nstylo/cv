@@ -23,7 +23,7 @@ const MONTH_MAP = {
   10: "October",
   11: "November",
   12: "December",
-}
+};
 
 const UL = styled.ul`
   margin-block-start: 0.2em;
@@ -103,7 +103,7 @@ const SidebarSection = styled.div`
 
 const Content = styled.main`
   width: 100%;
-  padding: 6px 30px 10px 22px;
+  padding: 16px 30px 10px 22px;
 `;
 
 const SectionHeader = styled.div`
@@ -207,26 +207,26 @@ const SectionItem = ({
   href,
   ...props
 }) => {
-  const { t } = useTranslation()
+  const { t } = useTranslation();
 
   // weird date transformation, definitly TODO
-  let dateString = []
+  let dateString = [];
   for (let i = 0; i < 2; i++) {
-    const date_ = date[i]
+    const date_ = date[i];
     // you can use [] for the second date item, and it is assumed that the activity
     // has no end date -> until 'present'
     // or omit the second item and assume that activity has no range (only within one month)
     if (i === 1) {
       if (date_ instanceof Array && !date_.length) {
-        dateString.push(t("present"))
-        continue
+        dateString.push(t("present"));
+        continue;
       } else if (!date_) {
-        continue
+        continue;
       }
     }
-    const month = MONTH_MAP[date_[0]] || ""
-    const year = date_[1]
-    dateString.push((month ? (month + " ") : "") + year)
+    const month = MONTH_MAP[date_[0]] || "";
+    const year = date_[1];
+    dateString.push((month ? month + " " : "") + year);
   }
 
   return (
@@ -242,7 +242,7 @@ const SectionItem = ({
       <SectionItemRight>
         <PositionDate>
           <SectionItemHeader>{position}</SectionItemHeader>
-          <Date>{dateString.join(' - ')}</Date>
+          <Date>{dateString.join(" - ")}</Date>
         </PositionDate>
         <SectionItemContent>{children}</SectionItemContent>
       </SectionItemRight>
@@ -479,31 +479,31 @@ const SidebarLinkContainer = styled.div`
 `;
 
 const Language = ({ text, level = 0 }) => {
-  const { t } = useTranslation()
+  const { t } = useTranslation();
 
   let level_text;
   switch (level) {
     case 1:
-      level_text = t('sidebar.language_subscript.basic');
+      level_text = t("sidebar.language_subscript.basic");
       break;
     case 2:
-      level_text = t('sidebar.language_subscript.intermediate');
+      level_text = t("sidebar.language_subscript.intermediate");
       break;
     case 3:
-      level_text = t('sidebar.language_subscript.fluent');
+      level_text = t("sidebar.language_subscript.fluent");
       break;
     case 4:
-      level_text = t('sidebar.language_subscript.native');
+      level_text = t("sidebar.language_subscript.native");
       break;
     default:
-      level_text = t('sidebar.language_subscript.basic');
+      level_text = t("sidebar.language_subscript.basic");
   }
 
   return (
     <LanguageWrapper>
       <div
         style={{
-          paddingLeft: 24,
+          paddingLeft: 16,
           fontFamily: "Roboto Condensed",
           fontSize: 12,
           fontWeight: 600,
@@ -523,7 +523,12 @@ const Language = ({ text, level = 0 }) => {
         </span>
       </div>
       <div
-        style={{ display: "flex", flexDirection: "row", alignItems: "center" }}
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          alignItems: "center",
+          paddingLeft: 8,
+        }}
       >
         {Array(4)
           .fill()
@@ -592,9 +597,9 @@ function CV() {
             </SidebarSection>
             <SidebarSection>
               <SidebarHeader>{t("sidebar.header.contact")}</SidebarHeader>
-              Achilleslaan 21, 5631BS
+              Lemförder Straße 5, 30169
               <br />
-              Eindhoven, NL
+              Hannover, DE
               <br />
               <br />
               <div style={{ lineHeight: 2 }}>
@@ -682,7 +687,7 @@ function CV() {
                     target="_blank"
                     rel="noreferrer"
                   >
-                    my web cv
+                    {t("sidebar.web_cv")}
                   </A>
                   <img
                     src={cv}
@@ -695,9 +700,9 @@ function CV() {
             <SidebarSection>
               <SidebarHeader>{t("sidebar.header.languages")}</SidebarHeader>
               {[
-                { text: "German", level: 4 },
-                { text: "English", level: 3 },
-                { text: "Dutch", level: 1 },
+                { text: t("sidebar.languages.language1"), level: 4 },
+                { text: t("sidebar.languages.language2"), level: 3 },
+                { text: t("sidebar.languages.language3"), level: 1 },
               ].map((lang) => (
                 <Language key={lang.text} text={lang.text} level={lang.level} />
               ))}
@@ -817,7 +822,10 @@ function CV() {
               <SectionItem
                 entity="Eindhoven University of Technology, NL"
                 position="Bachelor of Science"
-                date={[[null, 2017], [null, 2021]]}
+                date={[
+                  [null, 2017],
+                  [null, 2021],
+                ]}
                 href="https://www.tue.nl/en/"
               >
                 Computer Science & Engineering
@@ -835,14 +843,20 @@ function CV() {
               <SectionItem
                 entity="English Teaching College Wellington, NZ"
                 position="CAE C1"
-                date={[[null, 2014], [null, 2015]]}
+                date={[
+                  [null, 2014],
+                  [null, 2015],
+                ]}
                 href="https://www.etc.ac.nz/"
               >
                 English
               </SectionItem>
               <SectionItem
                 entity="Freiherr-vom-Stein Gymnasium, DE"
-                date={[[null, 2006], [null, 2014]]}
+                date={[
+                  [null, 2006],
+                  [null, 2014],
+                ]}
                 position="Abitur"
                 href="http://www.stein.kleve.de/"
               >
@@ -868,7 +882,10 @@ function CV() {
                 entity="Hable Accessibility"
                 place="Eindhoven, NL"
                 position={t("experience.job2.job_title")}
-                date={[[3, 2020], []]}
+                date={[
+                  [3, 2020],
+                  [8, 2020],
+                ]}
                 href="https://www.iamhable.com/"
               >
                 <UL>
@@ -879,7 +896,10 @@ function CV() {
                 entity="A Place For Now"
                 place="Eindhoven, NL"
                 position={t("experience.job3.job_title")}
-                date={[[3, 2020], [11, 2020]]}
+                date={[
+                  [3, 2020],
+                  [11, 2020],
+                ]}
                 href="https://github.com/nstylo/aplacefornow.nl"
               >
                 <UL>
@@ -891,7 +911,10 @@ function CV() {
                 entity="Code Product Solutions B.V."
                 place="Eindhoven, NL"
                 position={t("experience.job4.job_title")}
-                date={[[7, 2019], [8, 2019]]}
+                date={[
+                  [7, 2019],
+                  [8, 2019],
+                ]}
                 href="https://www.code-ps.com/office/id11603/eindhoven/"
               >
                 <UL>
@@ -926,7 +949,10 @@ function CV() {
                 entity="Eindhoven University of Technology"
                 place="Eindhoven, NL"
                 position={t("internships.job1.job_title")}
-                date={[[9, 2018], [11, 2019]]}
+                date={[
+                  [9, 2018],
+                  [11, 2019],
+                ]}
                 href="https://www.tue.nl/en/"
               >
                 {t("internships.job1.job_desc_1")}
@@ -939,7 +965,10 @@ function CV() {
                 entity="Nestlé Purina"
                 place="Euskirchen, DE"
                 position={t("internships.job2.job_title")}
-                date={[[10, 2013], [11, 2013]]}
+                date={[
+                  [10, 2013],
+                  [11, 2013],
+                ]}
                 href="https://www.purina.com/"
               >
                 <UL>
@@ -950,7 +979,10 @@ function CV() {
                 entity="Evonik Industries"
                 place="Krefeld, DE"
                 position={t("internships.job3.job_title")}
-                date={[[6, 2012], [7, 2012]]}
+                date={[
+                  [6, 2012],
+                  [7, 2012],
+                ]}
                 href="https://www.purina.com/"
               >
                 <UL>
@@ -972,10 +1004,12 @@ function CV() {
               <SectionItem
                 entity="Input Output (IOHK)"
                 position={t("certifications.cert2.cert_title")}
-                place="Online Course"
+                place={t("certifications.cert2.cert_sub_title")}
                 date={[[7, 2021], []]}
                 href="https://developers.cardano.org/en/plutus-pioneer-program/"
-              ></SectionItem>
+              >
+                {t("certifications.cert2.cert_desc_1")}
+              </SectionItem>
             </Section>
           </Content>
         </Container>
@@ -985,3 +1019,4 @@ function CV() {
 }
 
 export default CV;
+
