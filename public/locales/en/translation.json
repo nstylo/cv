@@ -13,6 +13,74 @@
       "interest4": "Chess",
       "interest5": "Cycling, Touring",
       "interest6": "Strategy Games"
+    },
+    "languages": {
+      "language1": "German",
+      "language2": "English",
+      "language3": "Dutch"
+    },
+    "language_subscript": {
+      "native": "native",
+      "fluent": "fluent",
+      "intermediate": "intermediate",
+      "basic": "basic"
     }
-  }
+  },
+  "personal_information": " I am a problem solver, fueled by curiosity and a passion for learning new things. My goal is to leverage my creativity and skill set in computer science to solve complex real-world problems.\n I am committed to expanding my skills as a software engineer and therefore I devote considerable time to experimenting with modern web-frameworks, functional programming, and systems programming languages. My specific areas of interest include the Linux operating system, open source software, and blockchain technology.",
+  "header": {
+    "header1": "Personal Information",
+    "header2": "Education",
+    "header3": "Professional Experience",
+    "header4": "Internships & Non-Professional Experience",
+    "header5": "Licenses & Certifications"
+  },
+  "experience": {
+    "job1": {
+      "job_desc_1": "Developing custom business software.",
+      "job_desc_2": "Django, Python, PostgreSQL, ReactJS, MobX, Docker, Cypress, Linux.",
+      "job_desc_3": "Designing an implementing application module.",
+      "job_desc_4": "Interacting directly with customers and translating their needs into software solutions.",
+      "job_title": "Software Engineer"
+    },
+    "job2": {
+      "job_desc_1": "Writing a parser in Python which transpiles a custom language into C++ source code.",
+      "job_title": "Software Engineer"
+    },
+    "job3": {
+      "job_desc_1": "Implementing a modern web application using ReactJS and MaterialUI.",
+      "job_desc_2": "Responsible for Continuous Integration on Google Cloud using Docker.",
+      "job_title": "Lead Frontend Developer"
+    },
+    "job4": {
+      "job_desc_1": "Developing an interface for customers using ReactJS and REST API which automates simulation processes.",
+      "job_desc_2": "Workflow via GitLab CI and testing with Jest.",
+      "job_title": "Frontend Developer"
+    }
+  },
+  "internships": {
+    "job1": {
+      "job_desc_1": "Student assistant for five courses.",
+      "job_desc_2": "Java Programming, Discrete Structures, Data Structures, Human Technology Interaction & Web Tech, Logic & Set Theory.",
+      "job_title": "Student Assistant"
+    },
+    "job2": {
+      "job_desc_1": "Social media analysis on competitor products.",
+      "job_title": "Intern Marketing & Sales"
+    },
+    "job3": {
+      "job_desc_1": "Support for software and hardware issues.",
+      "job_desc_2": "Installing new hardware for employees.",
+      "job_title": "Intern IT Administration"
+    }
+  },
+  "certifications": {
+    "cert1": {
+      "cert_desc_1": "Credential ID: 0047776898",
+      "cert_title": "Cambridge English Level 2 Certificate"
+    },
+    "cert2": {
+      "cert_title": "Plutus Pioneer Program"
+    }
+  },
+  "present": "present"
 }

@@ -10,6 +10,21 @@ import github from "./github.png";
 import cv from "./cv.png";
 import axios from "axios";
 
+const MONTH_MAP = {
+  1: "January",
+  2: "February",
+  3: "March",
+  4: "April",
+  5: "May",
+  6: "June",
+  7: "July",
+  8: "August",
+  9: "September",
+  10: "October",
+  11: "November",
+  12: "December",
+}
+
 const UL = styled.ul`
   margin-block-start: 0.2em;
   margin-block-end: 0.2em;
@@ -192,6 +207,28 @@ const SectionItem = ({
   href,
   ...props
 }) => {
+  const { t } = useTranslation()
+
+  // weird date transformation, definitly TODO
+  let dateString = []
+  for (let i = 0; i < 2; i++) {
+    const date_ = date[i]
+    // you can use [] for the second date item, and it is assumed that the activity
+    // has no end date -> until 'present'
+    // or omit the second item and assume that activity has no range (only within one month)
+    if (i === 1) {
+      if (date_ instanceof Array && !date_.length) {
+        dateString.push(t("present"))
+        continue
+      } else if (!date_) {
+        continue
+      }
+    }
+    const month = MONTH_MAP[date_[0]] || ""
+    const year = date_[1]
+    dateString.push((month ? (month + " ") : "") + year)
+  }
+
   return (
     <SectionItemWrapper {...props}>
       <SectionItemLeft>
@@ -205,7 +242,7 @@ const SectionItem = ({
       <SectionItemRight>
         <PositionDate>
           <SectionItemHeader>{position}</SectionItemHeader>
-          <Date>{date}</Date>
+          <Date>{dateString.join(' - ')}</Date>
         </PositionDate>
         <SectionItemContent>{children}</SectionItemContent>
       </SectionItemRight>
@@ -442,22 +479,24 @@ const SidebarLinkContainer = styled.div`
 `;
 
 const Language = ({ text, level = 0 }) => {
+  const { t } = useTranslation()
+
   let level_text;
   switch (level) {
     case 1:
-      level_text = "basic";
+      level_text = t('sidebar.language_subscript.basic');
       break;
     case 2:
-      level_text = "keine ahnung";
+      level_text = t('sidebar.language_subscript.intermediate');
       break;
     case 3:
-      level_text = "fluent";
+      level_text = t('sidebar.language_subscript.fluent');
       break;
     case 4:
-      level_text = "native";
+      level_text = t('sidebar.language_subscript.native');
       break;
     default:
-      level_text = "keine ahnung";
+      level_text = t('sidebar.language_subscript.basic');
   }
 
   return (
@@ -765,25 +804,20 @@ function CV() {
             </SidebarSection>
           </Sidebar>
           <Content>
-            <Section header="Personal Information">
+            <Section header={t("header.header1")}>
               <SectionItemContent>
-                I am a problem solver, fueled by curiosity and a passion for
-                learning new things. My goal is to leverage my creativity and
-                skill set in computer science to solve complex real-world
-                problems.
-                <br />I am committed to expanding my skills as a software
-                engineer and therefore I devote considerable time to
-                experimenting with modern web-frameworks, functional
-                programming, and systems programming languages. My specific
-                areas of interest include the Linux operating system, open
-                source software, and blockchain technology.
+                {t("personal_information")
+                  .split("\n")
+                  .map((c) => (
+                    <p>{c}</p>
+                  ))}
               </SectionItemContent>
             </Section>
-            <Section header="Education">
+            <Section header={t("header.header2")}>
               <SectionItem
                 entity="Eindhoven University of Technology, NL"
                 position="Bachelor of Science"
-                date="2017 - 2021"
+                date={[[null, 2017], [null, 2021]]}
                 href="https://www.tue.nl/en/"
               >
                 Computer Science & Engineering
@@ -801,86 +835,68 @@ function CV() {
               <SectionItem
                 entity="English Teaching College Wellington, NZ"
                 position="CAE C1"
-                date="2014 - 2015"
+                date={[[null, 2014], [null, 2015]]}
                 href="https://www.etc.ac.nz/"
               >
                 English
               </SectionItem>
               <SectionItem
                 entity="Freiherr-vom-Stein Gymnasium, DE"
-                date="2006 - 2014"
+                date={[[null, 2006], [null, 2014]]}
                 position="Abitur"
                 href="http://www.stein.kleve.de/"
               >
                 A Level
               </SectionItem>
             </Section>
-            <Section header="Professional Experience">
+            <Section header={t("header.header3")}>
               <SectionItem
                 entity="Code Yellow B.V."
                 place="Eindhoven, NL"
-                position="Software Engineer"
-                date="August 2020 - Present"
+                position={t("experience.job1.job_title")}
+                date={[[8, 2020], []]}
                 href="https://www.codeyellow.nl/"
               >
                 <UL>
-                  <li>Developing custom business software.</li>
-                  <li>
-                    Django, Python, PostgreSQL, ReactJS, MobX, Docker, Cypress,
-                    Linux.
-                  </li>
-                  <li>Designing and implementing application modules.</li>
-                  <li>
-                    Interacting directly with customers and translating their
-                    needs into software solutions.
-                  </li>
+                  <li>{t("experience.job1.job_desc_1")}</li>
+                  <li>{t("experience.job1.job_desc_2")}</li>
+                  <li>{t("experience.job1.job_desc_3")}</li>
+                  <li>{t("experience.job1.job_desc_4")}</li>
                 </UL>
               </SectionItem>
               <SectionItem
                 entity="Hable Accessibility"
                 place="Eindhoven, NL"
-                position="Software Engineer"
-                date="March 2020 - Present"
+                position={t("experience.job2.job_title")}
+                date={[[3, 2020], []]}
                 href="https://www.iamhable.com/"
               >
                 <UL>
-                  <li>
-                    Writing a parser in Python which transpiles a custom
-                    language into C++ source code.
-                  </li>
+                  <li>{t("experience.job2.job_desc_1")}</li>
                 </UL>
               </SectionItem>
               <SectionItem
                 entity="A Place For Now"
                 place="Eindhoven, NL"
-                position="Lead Frontend Developer"
-                date="March 2020 - November 2020"
+                position={t("experience.job3.job_title")}
+                date={[[3, 2020], [11, 2020]]}
                 href="https://github.com/nstylo/aplacefornow.nl"
               >
                 <UL>
-                  <li>
-                    Implementing a modern web application using ReactJS and
-                    MaterialUI.
-                  </li>
-                  <li>
-                    Responsible for Continuous Integration on Google Cloud using
-                    Docker.
-                  </li>
+                  <li>{t("experience.job3.job_desc_1")}</li>
+                  <li>{t("experience.job3.job_desc_2")}</li>
                 </UL>
               </SectionItem>
               <SectionItem
                 entity="Code Product Solutions B.V."
                 place="Eindhoven, NL"
-                position="Frontend Developer"
-                date="July 2019 - August 2019"
+                position={t("experience.job4.job_title")}
+                date={[[7, 2019], [8, 2019]]}
                 href="https://www.code-ps.com/office/id11603/eindhoven/"
               >
                 <UL>
-                  <li>
-                    Developing an interface for customers using ReactJS and REST
-                    API which automates simulation processes.
-                  </li>
-                  <li>Workflow via GitLab CI and testing with Jest.</li>
+                  <li>{t("experience.job4.job_desc_1")}</li>
+                  <li>{t("experience.job4.job_desc_2")}</li>
                 </UL>
               </SectionItem>
               {/*<SectionItem
@@ -905,69 +921,59 @@ function CV() {
                 href="https://www.rydges.com/accommodation/new-zealand/the-thorndon-hotel-wellington/"
               ></SectionItem>*/}
             </Section>
-            <Section header="Internships & Non-Professional Experience">
+            <Section header={t("header.header4")}>
               <SectionItem
                 entity="Eindhoven University of Technology"
                 place="Eindhoven, NL"
-                position="Student Assistant"
-                date="September 2018 - November 2019"
+                position={t("internships.job1.job_title")}
+                date={[[9, 2018], [11, 2019]]}
                 href="https://www.tue.nl/en/"
               >
-                Student assistant for five courses.
+                {t("internships.job1.job_desc_1")}
                 <br />
                 <UL>
-                  <li>
-                    Java Progrmming, Discrete Structures, Data Structures, Human
-                    Technology Interaction & Webtech, Logic & Set Theory
-                  </li>
+                  <li>{t("internships.job1.job_desc_2")}</li>
                 </UL>
-                {/*<UL>
-                  <li>Java Programming</li>
-                  <li>Discrete Structures</li>
-                  <li>Data Structures</li>
-                  <li>Human Technology Interaction & Webtech</li>
-                  <li>Logic & Set Theory</li>
-                </UL>*/}
               </SectionItem>
               <SectionItem
                 entity="Nestlé Purina"
                 place="Euskirchen, DE"
-                position="Intern Marketing & Sales"
-                date="October 2013 - November 2013"
+                position={t("internships.job2.job_title")}
+                date={[[10, 2013], [11, 2013]]}
                 href="https://www.purina.com/"
               >
                 <UL>
-                  <li>Social media analysis on competitor products.</li>
+                  <li>{t("internships.job2.job_desc_1")}</li>
                 </UL>
               </SectionItem>
               <SectionItem
                 entity="Evonik Industries"
                 place="Krefeld, DE"
-                position="Intern IT Administration"
-                date="Juni 2012 - Juli 2012"
+                position={t("internships.job3.job_title")}
+                date={[[6, 2012], [7, 2012]]}
                 href="https://www.purina.com/"
               >
                 <UL>
-                  <li>Support for software and hardware issues.</li>
-                  <li>Installing new hardware for employees.</li>
+                  <li>{t("internships.job3.job_desc_1")}</li>
+                  <li>{t("internships.job3.job_desc_2")}</li>
                 </UL>
               </SectionItem>
             </Section>
-            <Section header="Licenses & Certifications">
+            <Section header={t("header.header5")}>
               <SectionItem
                 entity="Massey University"
                 place="Wellingtion, NZ"
-                position="Cambridge English Level 2 Certificate"
-                date="December 2014"
+                position={t("certifications.cert1.cert_title")}
+                date={[[12, 2014]]}
                 href="https://www.massey.ac.nz/"
               >
-                Credential ID: 0047776898
+                {t("certifications.cert1.cert_desc_1")}
               </SectionItem>
               <SectionItem
                 entity="Input Output (IOHK)"
-                position="Plutus Pioneer Program"
+                position={t("certifications.cert2.cert_title")}
                 place="Online Course"
-                date="Juli 2021 - present"
+                date={[[7, 2021], []]}
                 href="https://developers.cardano.org/en/plutus-pioneer-program/"
               ></SectionItem>
             </Section>
