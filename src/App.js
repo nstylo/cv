@@ -915,7 +915,7 @@ function CV() {
                   [7, 2019],
                   [8, 2019],
                 ]}
-                href="https://www.code-ps.com/office/id11603/eindhoven/"
+                href="https://www.code-ps.com/"
               >
                 <UL>
                   <li>{t("experience.job4.job_desc_1")}</li>
@@ -983,7 +983,7 @@ function CV() {
                   [6, 2012],
                   [7, 2012],
                 ]}
-                href="https://www.purina.com/"
+                href="https://corporate.evonik.com/en"
               >
                 <UL>
                   <li>{t("internships.job3.job_desc_1")}</li>
@@ -1019,4 +1019,3 @@ function CV() {
 }
 
 export default CV;
-
