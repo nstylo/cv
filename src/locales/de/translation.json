@@ -1,4 +1,18 @@
 {
+  "months": {
+    "jan": "Januar",
+    "feb": "Februar",
+    "mar": "März",
+    "apr": "April",
+    "may": "Mai",
+    "jun": "Juni",
+    "jul": "Juli",
+    "aug": "August",
+    "sep": "September",
+    "oct": "Oktober",
+    "nov": "November",
+    "dec": "Dezember"
+  },
   "sidebar": {
     "web_cv": "Online Lebenslauf",
     "header": {
@@ -49,7 +63,7 @@
     },
     "job3": {
       "job_desc_1": "Entwickeln einer modernen Webapplikation mit ReactJS und MaterialUI.",
-      "job_desc_2": "Verantwortlich für 'Continuous Integration' in Google Cloud mit Docker.",
+      "job_desc_2": "Verantwortlich für 'Continuous Integration' in Google Cloud Platform mit Docker.",
       "job_title": "Frontend Entwickler"
     },
     "job4": {

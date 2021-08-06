@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import styled, { keyframes, createGlobalStyle } from "styled-components";
 import { useTranslation } from "react-i18next";
+import i18n from "./i18n";
+import i18next from "i18next";
 import me from "./Me.jpeg";
 import home from "./home.png";
 import linkedin from "./linkedin.png";
@@ -10,20 +12,25 @@ import github from "./github.png";
 import cv from "./cv.png";
 import axios from "axios";
 
-const MONTH_MAP = {
-  1: "January",
-  2: "February",
-  3: "March",
-  4: "April",
-  5: "May",
-  6: "June",
-  7: "July",
-  8: "August",
-  9: "September",
-  10: "October",
-  11: "November",
-  12: "December",
-};
+let MONTH_MAP = {};
+i18next.on("languageChanged", () => {
+  /* resources have been loaded */
+
+  MONTH_MAP = {
+    1: i18n.t("months.jan"),
+    2: i18n.t("months.feb"),
+    3: i18n.t("months.mar"),
+    4: i18n.t("months.apr"),
+    5: i18n.t("months.may"),
+    6: i18n.t("months.jun"),
+    7: i18n.t("months.jul"),
+    8: i18n.t("months.aug"),
+    9: i18n.t("months.sep"),
+    10: i18n.t("months.oct"),
+    11: i18n.t("months.nov"),
+    12: i18n.t("months.dec"),
+  };
+});
 
 const UL = styled.ul`
   margin-block-start: 0.2em;
@@ -771,7 +778,7 @@ function CV() {
                   },
                   { text: "GraphQL", wikiText: "", wikiDisabled: false },
                   {
-                    text: "Google Cloud",
+                    text: "Google Cloud Platform",
                     wikiText: "",
                     wikiDisabled: false,
                   },
