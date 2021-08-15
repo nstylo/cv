@@ -41,7 +41,7 @@
       "basic": "basic"
     }
   },
-  "personal_information": "Software Engineer. Passionate about designing and developing applications. I am curious and eager to learn. I am always seeking to broaden my skillset. My latest interests are functional programming and smart contract development.",
+  "personal_information": "Software Engineer with passion for the Design and Development of extensible, maintainable and modular applications; curious and eager to learn. I am always seeking to broaden my skillset; currently interested in functional programming and smart contract development.",
   "header": {
     "header1": "Personal Information",
     "header2": "Education",
@@ -51,31 +51,30 @@
   },
   "experience": {
     "job1": {
-      "job_desc_1": "Developing custom business software.",
-      "job_desc_2": "Django, Python, PostgreSQL, ReactJS, MobX, Docker, Cypress, Linux.",
-      "job_desc_3": "Designing and implementing application module.",
-      "job_desc_4": "Interacting with customers and translating their needs into software solutions.",
+      "job_desc_1": "Design and Development of custom business software and application modules.",
+      "job_desc_2": "Technologies: Django, Python, PostgreSQL, ReactJS, MobX, Docker, Cypress, Linux.",
+      "job_desc_3": "Interaction with customers and translating their needs into software solutions.",
       "job_title": "Software Engineer"
     },
     "job2": {
-      "job_desc_1": "Writing an application in Python which transpiles a custom language into C++ source code.",
+      "job_desc_1": "Writing an application in Python which transpiles a domain specific language (DSL) into C++ source code.",
       "job_title": "Software Engineer"
     },
     "job3": {
-      "job_desc_1": "Implementing a modern web application using ReactJS and MaterialUI.",
+      "job_desc_1": "Implementation of a modern web application using ReactJS and MaterialUI.",
       "job_desc_2": "Responsible for Continuous Integration on Google Cloud Platform using Docker.",
       "job_title": "Frontend Developer"
     },
     "job4": {
       "job_desc_1": "Developing a customer interface for the browser.",
-      "job_desc_2": "ReactJS, Ant Design, GitLab CI, Jest",
+      "job_desc_2": "Technologies: ReactJS, Ant Design, GitLab CI, Jest",
       "job_title": "Frontend Developer"
     }
   },
   "internships": {
     "job1": {
       "job_desc_1": "Responsible for grading, organizing and providing feedback.",
-      "job_desc_2": "Java Programming, Discrete Structures, Data Structures, Human Technology Interaction & Web Tech, Logic & Set Theory.",
+      "job_desc_2": "Courses: Java Programming, Discrete Structures, Data Structures, Human Technology Interaction & Web Tech, Logic & Set Theory.",
       "job_title": "Student Assistant"
     },
     "job2": {

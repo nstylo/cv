@@ -882,7 +882,6 @@ function CV() {
                   <li>{t("experience.job1.job_desc_1")}</li>
                   <li>{t("experience.job1.job_desc_2")}</li>
                   <li>{t("experience.job1.job_desc_3")}</li>
-                  <li>{t("experience.job1.job_desc_4")}</li>
                 </UL>
               </SectionItem>
               <SectionItem

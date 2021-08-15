@@ -41,7 +41,7 @@
       "basic": "Anfänger"
     }
   },
-  "personal_information": "Softwareentwickler. Leidenschaft für das Design und die Entwicklung von Anwendungen. Ich bin wissbegierig und immer bestrebt, meine Fähigkeiten zu erweitern. Meine neuesten Interessen sind Funktionale Programmierung und Intelligente Vertragsentwicklung.",
+  "personal_information": "Softwareentwickler mit Leidenschaft für Design und Entwicklung von wartbaren, modularen Anwendungen; wissbegierig und stets bestrebt meine Fähigkeiten auf das nächste Level zu bringen; aktuell interessiert an Funktionaler Programmierung und Intelligenter Vertragsentwicklung.",
   "header": {
     "header1": "Über mich",
     "header2": "Ausbildung",
@@ -51,31 +51,30 @@
   },
   "experience": {
     "job1": {
-      "job_desc_1": "Entwickeln von kundenspezifischer Software.",
-      "job_desc_2": "Django, Python, PostgreSQL, ReactJS, MobX, Docker, Cypress, Linux.",
-      "job_desc_3": "Entwerfen und implementieren von Anwendungsmodulen.",
-      "job_desc_4": "Interaktion mit Kunden und umsetzen ihrer Bedürfnisse in Softwarelösungen.",
+      "job_desc_1": "Entwurf und Implementierung von kundenspezifischen Softwarelösungen und Anwendungsmodulen.",
+      "job_desc_2": "Technologien: Django, Python, PostgreSQL, ReactJS, MobX, Docker, Cypress, Linux.",
+      "job_desc_3": "Kundeninteraktion zur Umsetzung der Anforderungen an die Software.",
       "job_title": "Softwareentwickler"
     },
     "job2": {
-      "job_desc_1": "Schreiben eines Transpilers in Python, der domänenspezifische Sprache in C++-Quellcode übersetzt.",
+      "job_desc_1": "Implementierung eines Transpilers in Python zur Übersetzung einer domänenspezifischen Sprache (DSL) in C++ Quellcode.",
       "job_title": "Softwareentwickler"
     },
     "job3": {
-      "job_desc_1": "Entwickeln einer modernen Webapplikation mit ReactJS und MaterialUI.",
-      "job_desc_2": "Verantwortlich für 'Continuous Integration' in Google Cloud Platform mit Docker.",
+      "job_desc_1": "Entwicklung einer modernen Webapplikation mit ReactJS und MaterialUI.",
+      "job_desc_2": "Umsetzung von Continuous Integration in der Google Cloud Platform mit Docker.",
       "job_title": "Frontend Entwickler"
     },
     "job4": {
-      "job_desc_1": "Entwickeln einer Kundenschnittstelle im Browser.",
-      "job_desc_2": "ReactJS, Ant Design, GitLab CI, Jest",
+      "job_desc_1": "Entwickelung einer browserbasierten Kundenschnittstelle.",
+      "job_desc_2": "Technologien: ReactJS, Ant Design, GitLab CI, Jest",
       "job_title": "Frontend Entwickler"
     }
   },
   "internships": {
     "job1": {
       "job_desc_1": "Verantwortlich für Benotung, Organisation und Feedback.",
-      "job_desc_2": "Java-Programmierung, Diskrete Strukturen, Daten Strukturen, Web-Technologie, Logik & Mengenlehre.",
+      "job_desc_2": "Kurse: Java-Programmierung, Diskrete Strukturen, Daten Strukturen, Web-Technologie, Logik & Mengenlehre.",
       "job_title": "Studentische Hilfskraft"
     },
     "job2": {
