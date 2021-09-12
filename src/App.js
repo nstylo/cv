@@ -756,6 +756,16 @@ function CV() {
                     wikiDisabled: false,
                   },
                   {
+                    text: "Rust",
+                    wikiText: "Rust_(programming_language)",
+                    wikiDisabled: false,
+                  },
+                  {
+                    text: "Haskell",
+                    wikiText: "Haskell_(programming_language)",
+                    wikiDisabled: false,
+                  },
+                  {
                     text: "C",
                     wikiText: "C_(programming_language)",
                     wikiDisabled: false,
@@ -764,11 +774,6 @@ function CV() {
                   {
                     text: "Bash",
                     wikiText: "Bash_(Unix_shell)",
-                    wikiDisabled: false,
-                  },
-                  {
-                    text: "Haskell",
-                    wikiText: "Haskell_(programming_language)",
                     wikiDisabled: false,
                   },
                   {
