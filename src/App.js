@@ -718,12 +718,12 @@ function CV() {
               <SidebarHeader>{t("sidebar.header.skillset")}</SidebarHeader>
               <Skillset>
                 {[
-                  { text: "JavaScript", wikiText: "", wikiDisabled: false },
                   {
                     text: "Python",
                     wikiText: "Python_(programming_language)",
                     wikiDisabled: false,
                   },
+                  { text: "JavaScript", wikiText: "", wikiDisabled: false },
                   { text: "ReactJS", wikiText: "", wikiDisabled: false },
                   { text: "Linux", wikiText: "", wikiDisabled: false },
                   { text: "Git", wikiText: "", wikiDisabled: false },
@@ -812,6 +812,7 @@ function CV() {
                   t("sidebar.interests.interest4"),
                   t("sidebar.interests.interest5"),
                   t("sidebar.interests.interest6"),
+                  t("sidebar.interests.interest7"),
                 ].map((item) => (
                   <HobbyOuter key={item}>
                     <HobbyInner>{item}</HobbyInner>
