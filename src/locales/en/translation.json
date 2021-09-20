@@ -24,11 +24,11 @@
     "interests": {
       "interest1": "Cooking",
       "interest2": "Sketching",
-      "interest3": "Playing Guitar",
+      "interest3": "Playing the guitar",
       "interest4": "Chess",
       "interest5": "Cycling",
       "interest6": "Swimming",
-      "interest7": "Strategy Games"
+      "interest7": "Strategy games"
     },
     "languages": {
       "language1": "German",
@@ -52,23 +52,26 @@
   },
   "experience": {
     "job1": {
-      "job_desc_1": "Design and Development of custom business software and application modules.",
-      "job_desc_2": "Technologies: Django, Python, PostgreSQL, ReactJS, MobX, Docker, Cypress, Linux.",
+      "job_desc_1": "Design and Development of application modules for a subscription management system used by five customers.",
+      "job_desc_2": "Automation of all major business processes for customers in direct marketing.",
       "job_desc_3": "Interaction with customers and translating their needs into software solutions.",
+      "job_desc_4": "Technologies: Django, Python, PostgreSQL, ReactJS, MobX, Docker, Cypress, Linux.",
       "job_title": "Software Engineer"
     },
     "job2": {
-      "job_desc_1": "Writing an application in Python which transpiles a domain specific language (DSL) into C++ source code.",
+      "job_desc_1": "Contributed to Hable One, the easiest physical braille keyboard for the visually impaired.",
+      "job_desc_2": "Developed a transpiler which converts domain specific language (DSL) into C++ source code using Python.",
       "job_title": "Software Engineer"
     },
     "job3": {
-      "job_desc_1": "Implementation of a modern web application using ReactJS and MaterialUI.",
-      "job_desc_2": "Responsible for Continuous Integration on Google Cloud Platform using Docker.",
+      "job_desc_1": "Built a accomodation website connecting home owners with students.",
+      "job_desc_2": "Application developed using React and MaterialUI (frontend), Nodejs (backend), and Firestore (database).",
+      "job_desc_3": "Deployed on Google Cloud using Docker.",
       "job_title": "Frontend Developer"
     },
     "job4": {
-      "job_desc_1": "Developing a customer interface for the browser.",
-      "job_desc_2": "Technologies: ReactJS, Ant Design, GitLab CI, Jest",
+      "job_desc_1": "Developed an MVP for automating customer interaction which enables easy simulation of plastic injection molding using Autodesk Moldflow.",
+      "job_desc_2": "Application developed using React (frontend), Django (backend), and PostgreSQL (database).",
       "job_title": "Frontend Developer"
     }
   },

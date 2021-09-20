@@ -48,7 +48,7 @@ const CVouter = styled.div`
 const CVbody = styled.div`
   width: 210mm;
   color: #4d4d4d;
-  font-size: 11px;
+  font-size: 10px;
   background-color: white;
   overflow: hidden;
   padding-bottom: 28px;
@@ -91,7 +91,7 @@ const Sidebar = styled.aside`
   height: 100%;
   background-color: #f2f2f2;
   padding: 12px;
-  font-size: 12px;
+  font-size: 11px;
   text-align: right;
   box-sizing: border-box;
 `;
@@ -141,7 +141,7 @@ const HR = styled.div`
 const SectionItemWrapper = styled.div`
   display: flex;
   flex-direction: row;
-  font-size: 11px;
+  font-size: 10px;
   color: #4d4d4d;
   margin: 8px 0;
 `;
@@ -169,7 +169,7 @@ const SectionItemHeader = styled.div`
 const SectionItemContent = styled.div`
   font-weight: 300;
   text-align: justify;
-  font-size: 11px;
+  font-size: 10px;
 `;
 
 const Company = styled.p`
@@ -308,7 +308,7 @@ const ToolTip = styled.div`
 
 const SkillInner = styled.div`
   font-weight: 300;
-  font-size: 12px;
+  font-size: 11px;
   padding: 2px 6px;
   white-space: nowrap;
   pointer-events: none;
@@ -888,6 +888,7 @@ function CV() {
                   <li>{t("experience.job1.job_desc_1")}</li>
                   <li>{t("experience.job1.job_desc_2")}</li>
                   <li>{t("experience.job1.job_desc_3")}</li>
+                  <li>{t("experience.job1.job_desc_4")}</li>
                 </UL>
               </SectionItem>
               <SectionItem
@@ -902,6 +903,7 @@ function CV() {
               >
                 <UL>
                   <li>{t("experience.job2.job_desc_1")}</li>
+                  <li>{t("experience.job2.job_desc_2")}</li>
                 </UL>
               </SectionItem>
               <SectionItem
@@ -917,6 +919,7 @@ function CV() {
                 <UL>
                   <li>{t("experience.job3.job_desc_1")}</li>
                   <li>{t("experience.job3.job_desc_2")}</li>
+                  <li>{t("experience.job3.job_desc_3")}</li>
                 </UL>
               </SectionItem>
               <SectionItem
