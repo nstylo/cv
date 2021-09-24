@@ -573,6 +573,7 @@ const GlobalStyle = createGlobalStyle`
 
 function CV() {
   const { t, i18n } = useTranslation();
+  const telNr = "+4917641993319";
 
   React.useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search);
@@ -613,11 +614,11 @@ function CV() {
                 <SidebarLinkContainer>
                   <A
                     color="#21a021"
-                    href="tel:+31682220490"
+                    href={`tel:${telNr}`}
                     target="_blank"
                     rel="noreferrer"
                   >
-                    +31 6 82220490
+                    {telNr}
                   </A>
                   <img
                     src={tel}
