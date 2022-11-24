@@ -24,11 +24,11 @@
     "interests": {
       "interest1": "Cooking",
       "interest2": "Sketching",
-      "interest3": "Playing the guitar",
+      "interest3": "Playing the bass",
       "interest4": "Chess",
-      "interest5": "Cycling",
+      "interest5": "Kickboxing",
       "interest6": "Swimming",
-      "interest7": "Strategy games"
+      "interest7": "Yoga"
     },
     "languages": {
       "language1": "German",
@@ -42,7 +42,7 @@
       "basic": "basic"
     }
   },
-  "personal_information": "Software Engineer with passion for the Design and Development of extensible, maintainable and modular applications; curious and eager to learn. I am always seeking to broaden my skillset; currently interested in functional programming and smart contract development.",
+  "personal_information": "Software Engineer with passion for the design and development of extensible, maintainable and modular applications. I am always seeking to broaden my skillset; currently interested in building decentralized systems and smart contract development.",
   "header": {
     "header1": "Personal Information",
     "header2": "Education",
@@ -52,7 +52,7 @@
   },
   "experience": {
     "job1": {
-      "job_desc_1": "Design and Development of application modules for a subscription management system used by five customers.",
+      "job_desc_1": "Design and development of application modules for a subscription management system used by middle-sized businesses.",
       "job_desc_2": "Automation of all major business processes for customers in direct marketing.",
       "job_desc_3": "Interaction with customers and translating their needs into software solutions.",
       "job_desc_4": "Technologies: Django, Python, PostgreSQL, ReactJS, MobX, Docker, Cypress, Linux.",
@@ -64,7 +64,7 @@
       "job_title": "Software Engineer"
     },
     "job3": {
-      "job_desc_1": "Built a accomodation website connecting home owners with students.",
+      "job_desc_1": "Worked on an accomodation website connecting home owners with students.",
       "job_desc_2": "Application developed using React and MaterialUI (frontend), Nodejs (backend), and Firestore (database).",
       "job_desc_3": "Deployed on Google Cloud using Docker.",
       "job_title": "Frontend Developer"
@@ -73,6 +73,12 @@
       "job_desc_1": "Developed an MVP for automating customer interaction which enables easy simulation of plastic injection molding using Autodesk Moldflow.",
       "job_desc_2": "Application developed using React (frontend), Django (backend), and PostgreSQL (database).",
       "job_title": "Frontend Developer"
+    },
+    "job5": {
+      "job_desc_1": "Designing and implementing an API and supplementary web application for meteorologial data.",
+      "job_desc_2": "Setting up automated test suite for both unit tests and fully integrated end-to-end tests. Overseeing test planning.",
+      "job_desc_3": "Mentoring junior developer in architectural decisions.",
+      "job_title": "Software Engineer"
     }
   },
   "internships": {

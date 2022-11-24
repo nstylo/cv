@@ -24,11 +24,11 @@
     "interests": {
       "interest1": "Kochen",
       "interest2": "Zeichnen",
-      "interest3": "Gitarre spielen",
+      "interest3": "Bass spielen",
       "interest4": "Schach",
-      "interest5": "Fahrradtouren",
+      "interest5": "Kickboxen",
       "interest6": "Schwimmen",
-      "interest7": "Strategiespiele"
+      "interest7": "Yoga"
     },
     "languages": {
       "language1": "Deutsch",
@@ -42,7 +42,7 @@
       "basic": "Anfänger"
     }
   },
-  "personal_information": "Softwareentwickler mit Leidenschaft für Design und Entwicklung von wartbaren, modularen Anwendungen; wissbegierig und stets bestrebt meine Fähigkeiten auf das nächste Level zu bringen; aktuell interessiert an Funktionaler Programmierung und Intelligenter Vertragsentwicklung.",
+  "personal_information": "Softwareentwickler mit Leidenschaft für Design und Entwicklung von wartbaren, modularen Anwendungen; wissbegierig und stets bestrebt meine Fähigkeiten auf das nächste Level zu bringen; aktuell interessiert an Dezentralen Systemen und Intelligenter Vertragsentwicklung.",
   "header": {
     "header1": "Über mich",
     "header2": "Ausbildung",
@@ -53,8 +53,9 @@
   "experience": {
     "job1": {
       "job_desc_1": "Entwurf und Implementierung von kundenspezifischen Softwarelösungen und Anwendungsmodulen.",
-      "job_desc_2": "Technologien: Django, Python, PostgreSQL, ReactJS, MobX, Docker, Cypress, Linux.",
+      "job_desc_2": "Automatisierung wichtiger Geschäftsprozesse für Kunden im Direktmarketing.",
       "job_desc_3": "Kundeninteraktion zur Umsetzung der Anforderungen an die Software.",
+      "job_desc_4": "Technologien: Django, Python, PostgreSQL, ReactJS, MobX, Docker, Cypress, Linux.",
       "job_title": "Softwareentwickler"
     },
     "job2": {

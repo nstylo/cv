@@ -605,9 +605,9 @@ function CV() {
             </SidebarSection>
             <SidebarSection>
               <SidebarHeader>{t("sidebar.header.contact")}</SidebarHeader>
-              Lemförder Straße 5, 30169
+              Heinsbergstraße 1, 50674
               <br />
-              Hannover, DE
+              Köln, DE
               <br />
               <br />
               <div style={{ lineHeight: 2 }}>
@@ -724,21 +724,31 @@ function CV() {
                     wikiText: "Python_(programming_language)",
                     wikiDisabled: false,
                   },
-                  { text: "JavaScript", wikiText: "", wikiDisabled: false },
-                  { text: "ReactJS", wikiText: "", wikiDisabled: false },
-                  { text: "Linux", wikiText: "", wikiDisabled: false },
-                  { text: "Git", wikiText: "", wikiDisabled: false },
+                  {
+                    text: "FastAPI",
+                    wikiText: "",
+                    wikiDisabled: false,
+                  },
+                  {
+                    text: "API design",
+                    wikiText: "",
+                    wikiDisabled: true,
+                  },
                   { text: "PostgreSQL", wikiText: "", wikiDisabled: false },
+                  { text: "JavaScript", wikiText: "", wikiDisabled: false },
                   {
-                    text: "Java",
-                    wikiText: "Java_(programming_language)",
+                    text: "TypeScript",
+                    wikiText: "",
                     wikiDisabled: false,
                   },
+                  { text: "Vue.js", wikiText: "", wikiDisabled: false },
+                  { text: "ReactJS", wikiText: "", wikiDisabled: false },
                   {
-                    text: "Django",
-                    wikiText: "Django_(web_framework)",
+                    text: "Docker",
+                    wikiText: "Docker_(software)",
                     wikiDisabled: false,
                   },
+                  { text: "Git", wikiText: "", wikiDisabled: false },
                   { text: "HTML5", wikiText: "", wikiDisabled: false },
                   { text: "CSS", wikiText: "", wikiDisabled: false },
                   {
@@ -746,24 +756,15 @@ function CV() {
                     wikiText: "Node.js",
                     wikiDisabled: false,
                   },
+                  { text: "Linux", wikiText: "", wikiDisabled: false },
                   {
-                    text: "TypeScript",
-                    wikiText: "",
-                    wikiDisabled: false,
-                  },
-                  {
-                    text: "Docker",
-                    wikiText: "Docker_(software)",
+                    text: "Django",
+                    wikiText: "Django_(web_framework)",
                     wikiDisabled: false,
                   },
                   {
                     text: "Rust",
                     wikiText: "Rust_(programming_language)",
-                    wikiDisabled: false,
-                  },
-                  {
-                    text: "Haskell",
-                    wikiText: "Haskell_(programming_language)",
                     wikiDisabled: false,
                   },
                   {
@@ -778,15 +779,14 @@ function CV() {
                     wikiDisabled: false,
                   },
                   {
+                    text: "Haskell",
+                    wikiText: "Haskell_(programming_language)",
+                    wikiDisabled: false,
+                  },
+                  {
                     text: "Plutus",
                     wikiText: "",
                     wikiDisabled: true,
-                  },
-                  { text: "GraphQL", wikiText: "", wikiDisabled: false },
-                  {
-                    text: "Google Cloud Platform",
-                    wikiText: "",
-                    wikiDisabled: false,
                   },
                   {
                     text: "Scrum",
@@ -879,17 +879,33 @@ function CV() {
             </Section>
             <Section header={t("header.header3")}>
               <SectionItem
+                entity="Cloudflight"
+                place="Köln, DE"
+                position={t("experience.job5.job_title")}
+                date={[[12, 2021], []]}
+                href="https://www.cloudflight.io/"
+              >
+                <UL>
+                  <li>{t("experience.job5.job_desc_1")}</li>
+                  <li>{t("experience.job5.job_desc_2")}</li>
+                  <li>{t("experience.job5.job_desc_3")}</li>
+                </UL>
+              </SectionItem>
+              <SectionItem
                 entity="Code Yellow B.V."
                 place="Eindhoven, NL"
                 position={t("experience.job1.job_title")}
-                date={[[8, 2020], []]}
+                date={[
+                  [8, 2020],
+                  [11, 2021],
+                ]}
                 href="https://www.codeyellow.nl/"
               >
                 <UL>
                   <li>{t("experience.job1.job_desc_1")}</li>
                   <li>{t("experience.job1.job_desc_2")}</li>
                   <li>{t("experience.job1.job_desc_3")}</li>
-                  <li>{t("experience.job1.job_desc_4")}</li>
+                  {/*<li>{t("experience.job1.job_desc_4")}</li>*/}
                 </UL>
               </SectionItem>
               <SectionItem
@@ -919,8 +935,8 @@ function CV() {
               >
                 <UL>
                   <li>{t("experience.job3.job_desc_1")}</li>
-                  <li>{t("experience.job3.job_desc_2")}</li>
-                  <li>{t("experience.job3.job_desc_3")}</li>
+                  {/*<li>{t("experience.job3.job_desc_2")}</li>*/}
+                  {/*<li>{t("experience.job3.job_desc_3")}</li>*/}
                 </UL>
               </SectionItem>
               <SectionItem
@@ -935,7 +951,7 @@ function CV() {
               >
                 <UL>
                   <li>{t("experience.job4.job_desc_1")}</li>
-                  <li>{t("experience.job4.job_desc_2")}</li>
+                  {/*<li>{t("experience.job4.job_desc_2")}</li>*/}
                 </UL>
               </SectionItem>
               {/*<SectionItem
@@ -977,7 +993,7 @@ function CV() {
                   <li>{t("internships.job1.job_desc_2")}</li>
                 </UL>
               </SectionItem>
-              <SectionItem
+              {/*<SectionItem
                 entity="Nestlé Purina"
                 place="Euskirchen, DE"
                 position={t("internships.job2.job_title")}
@@ -990,7 +1006,7 @@ function CV() {
                 <UL>
                   <li>{t("internships.job2.job_desc_1")}</li>
                 </UL>
-              </SectionItem>
+              </SectionItem>*/}
               <SectionItem
                 entity="Evonik Industries"
                 place="Krefeld, DE"
@@ -1021,7 +1037,10 @@ function CV() {
                 entity="Input Output (IOHK)"
                 position={t("certifications.cert2.cert_title")}
                 place={t("certifications.cert2.cert_sub_title")}
-                date={[[7, 2021], []]}
+                date={[
+                  [7, 2021],
+                  [9, 2021],
+                ]}
                 href="https://developers.cardano.org/en/plutus-pioneer-program/"
               >
                 {t("certifications.cert2.cert_desc_1")}
